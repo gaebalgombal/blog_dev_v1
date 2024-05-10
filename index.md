@@ -3,23 +3,21 @@
 layout: home
 
 hero:
-  name: "HWI's DEV BLOG"
-  text: "A Dev Blog"
-  tagline: My great project tagline
+  name: "HELLO WORLD!"
+  text: "I'm HWI, ready to be your best coworker :)"
+  # tagline: I'm HWI, ready to be your best coworker :)
   actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+      text: Resume
+      link: /resume/index
+    - theme: alt
+      text: Portfolio
+      link: /portfolio/index
+# features:
+#   - title: Feature A
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#   - title: Feature B
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#   - title: Feature C
+#     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
-
