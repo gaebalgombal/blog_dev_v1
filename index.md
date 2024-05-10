@@ -6,6 +6,9 @@ hero:
   name: "HELLO WORLD!"
   text: "I'm HWI, ready to be your best coworker :)"
   # tagline: I'm HWI, ready to be your best coworker :)
+  image:
+    src: /assets/logo.png
+    alt: Logo
   actions:
     - theme: alt
       text: Resume
