@@ -26,7 +26,8 @@ jobs:
           aws ec2 authorize-security-group-ingress \
           --group-id ${{ secrets.AWS_SG_ID }} \
           --protocol tcp --port 22 \
-          --cidr ${{ steps.ip.outputs.ipv4 }}/32
+          --cidr ${{ steps.ip.outputs.ipv4 }}/32 \
+          --region ap-southeast-2b
 
       - name: EC2 Production Server Deploy
         uses: appleboy/ssh-action@master
