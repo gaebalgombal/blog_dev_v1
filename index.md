@@ -7,7 +7,7 @@ hero:
   text: "I'm HWI, ready to be your best coworker :)"
   # tagline: I'm HWI, ready to be your best coworker :)
   image:
-    src: /public/logo_green.png
+    src: /logo_green.png
     alt: Logo
   actions:
     - theme: alt
