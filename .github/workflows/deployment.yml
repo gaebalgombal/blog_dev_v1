@@ -37,4 +37,9 @@ jobs:
           host: ${{ secrets.AWS_HOST }}
           username: ubuntu
           script: |
-            echo "remote ssh success"
+            cd ~/src/blog_dev_v1
+            git pull origin main
+            npm run docs:build
+            sudo rm -rf /var/www/dist
+            sudo cp -r ./.vitepress/dist /var/www/dist
+            sudo service ngingx restart
