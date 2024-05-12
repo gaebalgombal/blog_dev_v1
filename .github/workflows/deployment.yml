@@ -42,4 +42,4 @@ jobs:
             npm run docs:build
             sudo rm -rf /var/www/dist
             sudo cp -r ./.vitepress/dist /var/www/dist
-            sudo service ngingx restart
+            sudo service nginx restart
