@@ -7,6 +7,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Cache Dependencies
+        id: dependency-cache
+        uses: actions/cache@v3
+        with:
+          path: "**/node_modules"
+          key: npm-package-${{ hashFiles('**/package-lock.json') }}
+          retore-keys: |
+            npm-package-${{ hashFiles('**/package-lock.json') }}
+            npm-package-
+
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -23,14 +33,14 @@ jobs:
           echo ${{ steps.ip.outputs.ipv4 }}
           echo ${{ steps.ip.outputs.ipv6 }}
 
-      - name: Add GitHub Actions IP to Security group
+      - name: Add GitHub Actions IP to AWS Security group
         run: |
           aws ec2 authorize-security-group-ingress \
           --group-id ${{ secrets.AWS_SG_ID }} \
           --protocol tcp --port 22 \
           --cidr ${{ steps.ip.outputs.ipv4 }}/32 \
 
-      - name: EC2 Production Server Deploy
+      - name: Deploy to AWS Server
         uses: appleboy/ssh-action@master
         with:
           key: ${{ secrets.AWS_KEY }}
