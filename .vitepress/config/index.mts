@@ -6,7 +6,7 @@ import { shared } from "./shared";
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   ...shared,
-  lang: "en",
+  cleanUrls: true,
 
   locales: {
     en: {

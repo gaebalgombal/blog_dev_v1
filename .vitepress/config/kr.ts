@@ -4,9 +4,9 @@ export const kr = defineConfig({
   themeConfig: {
     nav: [
       { text: "Home", link: "/kr/" },
-      { text: "Resume", link: "/kr/resume/index" },
-      { text: "Portfolio", link: "/kr/portfolio/index" },
-      { text: "Blog", link: "/kr/blog/index" },
+      { text: "이력서", link: "/kr/resume/index" },
+      { text: "포트폴리오", link: "/kr/portfolio/index" },
+      { text: "블로그", link: "/kr/blog/index" },
     ],
 
     sidebar: {
@@ -20,30 +20,30 @@ export const kr = defineConfig({
 function sidebarBlog(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "Blog",
+      text: "블로그",
       items: [
         {
-          text: "Retrospects",
+          text: "회고",
           items: [
             {
-              text: "two years as a developer",
+              text: "개발자 2년 회고",
               link: "/retrospects/two-years-as-a-developer",
             },
             {
-              text: "4 months with a best team",
+              text: "프로젝트 4개월 회고",
               link: "/retrospects/4-months-with-a-best-team",
             },
           ],
         },
         {
-          text: "Projects",
+          text: "프로젝트",
           items: [
             {
-              text: "implementing ci/cd",
+              text: "CI/CD 구현",
               link: "/projects/implementing-ci/cd",
             },
             {
-              text: "refactoring legacy structure",
+              text: "레거시 구조 리팩토링",
               link: "/projects/refactoring-legacy-structure",
             },
           ],
