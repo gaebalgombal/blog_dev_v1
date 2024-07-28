@@ -1,0 +1,172 @@
+.ly_navbar h1 {
+  /* size and alignment */
+  box-sizing: border-box;
+  padding: 5px 10px;
+  /* margin-left: 160px; */
+
+  /* styling */
+  color: var(--text-color);
+
+  /* font */
+  font-size: 1.5rem;
+  font-style: monospace;
+  font-weight: 800;
+}
+
+.ly_navbar ul {
+  /* arrangement */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 450px;
+
+  /* styling */
+  list-style-type: none;
+}
+
+.ly_navbar li {
+  /* arrangement */
+  position: relative;
+
+  /* size */
+  box-sizing: border-box;
+  padding: 5px 10px;
+}
+
+.ly_navbar li a {
+  /* arrangement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* styling */
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-color);
+
+  /* font */
+  font-size: 1.1rem;
+  font-style: monospace;
+  font-weight: 500;
+
+  /* action */
+  /* transition: 0.25s; */
+}
+
+.ly_navbar li a:hover {
+  /* styling */
+  color: var(--signature-color);
+  font-weight: 600;
+}
+
+.ly_navbar li a.active {
+  /* styling */
+  color: var(--signature-color);
+  font-weight: 600;
+}
+
+.ly_navbar li a > .icons {
+  /* size and alignment */
+  box-sizing: border-box;
+  padding: 0 0 0 1px;
+  margin: 0;
+
+  /* font */
+  font-size: 1rem;
+}
+
+.ly_navbar li .dropdown {
+  /* arrangement */
+  display: none;
+  position: absolute;
+  top: calc(var(--navbar-height));
+  right: 10px;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  padding: 10px 10px 0 10px;
+  width: 100%;
+
+  /* styling */
+  border: 1px solid black;
+  background-color: var(--background-color);
+}
+
+.ly_navbar li:hover .dropdown {
+  display: block;
+}
+
+.ly_navbar li .dropdown:hover {
+  display: block;
+}
+
+.ly_navbar li .dropdown a {
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+
+.toggle-button {
+  /* arrangement */
+  position: relative;
+  display: inline-block;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 40px;
+  height: 22px;
+  padding: 0px;
+
+  /* styling */
+  background-color: var(--background-color2);
+  border: 1px solid var(--background-color3);
+  border-radius: 11px;
+
+  /* action */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.4s;
+}
+
+.toggle-button > .icons-wrapper {
+  /* arrangement */
+  position: relative;
+  display: none;
+
+  /* size and aligment */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* styling */
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-color);
+
+  /* action */
+  transition: transform 0.25s !important;
+}
+
+.toggle-button > .icons-wrapper.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle-button > .icons-wrapper.active.dark-mode {
+  transform: translateX(100%);
+}
+
+.toggle-button > .icons-wrapper > .icons {
+  /* size and alignment */
+  width: 12px;
+  height: 12px;
+
+  /* styling */
+  color: var(--text-color2);
+
+  /* font */
+  font-size: 12px;
+}

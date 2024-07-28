@@ -1,0 +1,72 @@
+.ly_navbar {
+  /* arrangement */
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 100%;
+  height: var(--navbar-height);
+  padding: 10px 0px;
+
+  /* styling */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  box-shadow: var(--shadow-color) 0px 10px 15px 0px;
+  border: 1px solid black;
+}
+
+.bl_navbar {
+  /* arranagement */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.ly_main {
+  /* arrangement */
+  position: absolute;
+  top: var(--navbar-height);
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.ly_sidebar {
+  /* arrangement */
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 450px;
+  height: 100%;
+  border-left: 1px solid var(--text-color);
+  padding: 50px 30px;
+}
+
+.ly_content {
+  /* arrangement */
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: calc(100% - 450px);
+  height: 100%;
+  padding: 50px 50px 50px 10px;
+}
