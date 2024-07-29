@@ -50,6 +50,11 @@
   border-bottom: 3px solid var(--signature-color);
 }
 
+.ly_table li:hover {
+  font-weight: 900;
+  color: var(--signature-color);
+}
+
 .ly_table li:last-child {
   border-bottom: 0px;
 }
