@@ -1,26 +1,102 @@
-.bl_sidebar p {
+.bl_sidebar {
+  /* size and alignment */
+  position: relative;
+
+  /* styling */
   color: var(--text-color);
-  font-size: 1.2rem;
+}
+
+.bl_sidebar p {
+  /* arrangement */
+  position: relative;
+
+  /* size and alignment */
+  margin: 0px 10px;
+  padding: 0px 0px 5px 30px;
+
+  /* styling */
+  font-size: 1.1rem;
   font-weight: 500;
-  padding-bottom: 1rem;
 }
 
-.bl_sidebar li {
-  color: var(--text-color2);
-  font-size: 1rem;
+.ly_table {
+  /* size and alignment */
+  margin: 0px 10px;
+
+  /* styling */
+  border-top: 7px solid var(--text-color);
+  border-bottom: 7px solid var(--text-color);
 }
 
-.bl_sidebar li.h1 {
-  padding-bottom: 0.5rem;
+.ly_table h1 {
+  /* size and alignment */
+  padding: 10px 0px 70px 30px;
+
+  /* styling */
+  font-size: 2.5em;
+  font-weight: 900;
 }
 
-.bl_sidebar li.h2 {
-  padding-left: 1.2rem;
-  padding-bottom: 0.5rem;
+.ly_table li {
+  position: relative;
+  margin: 0 0 0 30px;
+  padding: 15px 0px 5px 00px;
+  height: 20px;
+  border-bottom: 1px solid var(--text-color);
 }
 
-.bl_sidebar a {
+.ly_table li.active {
+  font-weight: 900;
+  color: var(--signature-color);
+  border-bottom: 3px solid var(--signature-color);
+}
+
+.ly_table li:last-child {
+  border-bottom: 0px;
+}
+
+.ly_table a {
+  /* styling */
   text-decoration: none;
   color: currentColor;
   font: inherit;
+}
+
+.h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.h2 {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.line {
+  /* arrangement */
+  position: absolute;
+  left: -20px;
+
+  /* size and aligment */
+  width: calc(var(--sidebar-width) - 30px + 100vw / 20);
+}
+
+.between {
+  /* styling */
+  border-bottom: 1px solid var(--text-color);
+  bottom: 0;
+}
+
+.line2 {
+  /* arrangement */
+  position: absolute;
+  left: -30px;
+
+  /* size and aligment */
+  width: calc(var(--sidebar-width) - 30px + 100vw / 20);
+}
+
+.bottom {
+  border-bottom: 2px solid var(--text-color);
+  top: 0;
 }

@@ -14,7 +14,7 @@
   background-color: var(--background-color);
   color: var(--text-color);
   box-shadow: var(--shadow-color) 0px 10px 15px 0px;
-  border: 1px solid black;
+  border-bottom: 3px solid black;
 }
 
 .bl_navbar {
@@ -46,16 +46,18 @@
 
 .ly_sidebar {
   /* arrangement */
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: var(--navbar-height);
   right: 0;
+  padding-top: 50px;
 
   /* size and alignment */
   box-sizing: border-box;
-  width: 450px;
+  width: calc(var(--sidebar-width) + 5%);
   height: 100%;
-  border-left: 1px solid var(--text-color);
-  padding: 50px 30px;
+
+  /* styling */
+  border-left: 3px solid var(--text-color);
 }
 
 .ly_content {
@@ -66,7 +68,7 @@
 
   /* size and alignment */
   box-sizing: border-box;
-  width: calc(100% - 450px);
+  width: calc(100% - var(--sidebar-width));
   height: 100%;
   padding: 50px 50px 50px 10px;
 }

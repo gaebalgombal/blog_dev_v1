@@ -88,7 +88,7 @@
   /* size and alignment */
   box-sizing: border-box;
   padding: 10px 10px 0 10px;
-  width: 100%;
+  width: calc(var(--sidebar-width) / 5);
 
   /* styling */
   border: 1px solid black;
