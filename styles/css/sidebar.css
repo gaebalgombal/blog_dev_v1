@@ -1,1 +1,26 @@
+.bl_sidebar p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 1rem;
+}
 
+.bl_sidebar li {
+  color: var(--text-color2);
+  font-size: 1rem;
+}
+
+.bl_sidebar li.h1 {
+  padding-bottom: 0.5rem;
+}
+
+.bl_sidebar li.h2 {
+  padding-left: 1.2rem;
+  padding-bottom: 0.5rem;
+}
+
+.bl_sidebar a {
+  text-decoration: none;
+  color: currentColor;
+  font: inherit;
+}

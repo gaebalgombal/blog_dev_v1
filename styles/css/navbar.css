@@ -1,4 +1,4 @@
-.ly_navbar h1 {
+.bl_navbar h1 {
   /* size and alignment */
   box-sizing: border-box;
   padding: 5px 10px;
@@ -13,7 +13,7 @@
   font-weight: 800;
 }
 
-.ly_navbar ul {
+.bl_navbar ul {
   /* arrangement */
   display: flex;
   align-items: center;
@@ -27,7 +27,7 @@
   list-style-type: none;
 }
 
-.ly_navbar li {
+.bl_navbar li {
   /* arrangement */
   position: relative;
 
@@ -36,7 +36,7 @@
   padding: 5px 10px;
 }
 
-.ly_navbar li a {
+.bl_navbar li a {
   /* arrangement */
   display: flex;
   align-items: center;
@@ -56,19 +56,19 @@
   /* transition: 0.25s; */
 }
 
-.ly_navbar li a:hover {
+.bl_navbar li a:hover {
   /* styling */
   color: var(--signature-color);
   font-weight: 600;
 }
 
-.ly_navbar li a.active {
+.bl_navbar li a.active {
   /* styling */
   color: var(--signature-color);
   font-weight: 600;
 }
 
-.ly_navbar li a > .icons {
+.bl_navbar li a > .icons {
   /* size and alignment */
   box-sizing: border-box;
   padding: 0 0 0 1px;
@@ -78,7 +78,7 @@
   font-size: 1rem;
 }
 
-.ly_navbar li .dropdown {
+.bl_navbar li .dropdown {
   /* arrangement */
   display: none;
   position: absolute;
@@ -95,15 +95,15 @@
   background-color: var(--background-color);
 }
 
-.ly_navbar li:hover .dropdown {
+.bl_navbar li:hover .dropdown {
   display: block;
 }
 
-.ly_navbar li .dropdown:hover {
+.bl_navbar li .dropdown:hover {
   display: block;
 }
 
-.ly_navbar li .dropdown a {
+.bl_navbar li .dropdown a {
   box-sizing: border-box;
   padding-bottom: 10px;
 }
