@@ -1,0 +1,10 @@
+.content {
+  position: absolute;
+  top: calc(var(--navbar-height) + var(--navbar-padding) * 2);
+
+  width: 74%;
+  height: 100%;
+  left: 5%;
+
+  padding-top: 10px;
+}

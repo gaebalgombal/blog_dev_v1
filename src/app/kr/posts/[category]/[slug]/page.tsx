@@ -1,4 +1,4 @@
-import styles from "@/app/page.module.css";
+import styles from "@/app/styles/page.module.css";
 import { PostBody } from "@/components/posts/body";
 import { getPostParams } from "@/components/posts/staticParams";
 import { PostParams, PostProps } from "@/config/types";
