@@ -15,6 +15,7 @@
   padding: 0px 0px 5px 10px;
 
   /* styling */
+  color: inherit;
   font-size: 1.1rem;
   font-weight: 500;
 }
@@ -67,11 +68,13 @@
 }
 
 .h1 {
+  color: var(--text-color2);
   font-size: 1.3rem;
   font-weight: 700;
 }
 
 .h2 {
+  color: var(--text-color2);
   font-size: 1rem;
   font-weight: 500;
 }
