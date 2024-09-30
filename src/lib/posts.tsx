@@ -20,6 +20,8 @@ const parsePostPath = (postPath: string) => {
   const path = postPath
     .slice(postPath.indexOf(BASE_PATH))
     .replace(`${BASE_PATH}/`, "")
+    .replace(`en/posts/`, "")
+    .replace(`kr/posts/`, "")
     .replace(".mdx", "");
 
   const [category, slug] = path.split("/");

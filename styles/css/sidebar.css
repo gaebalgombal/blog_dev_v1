@@ -16,13 +16,14 @@
 
   /* styling */
   color: inherit;
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
 .ly_table {
   /* size and alignment */
   margin: 0px 10px;
+  padding: 10px 0px;
 
   /* styling */
   border-top: 7px solid var(--text-color);
@@ -40,15 +41,15 @@
 
 .ly_table li {
   position: relative;
-  padding: 15px 0px 5px 10px;
+  padding: 5px 0px 5px 10px;
   height: 20px;
-  border-bottom: 1px solid var(--text-color);
+  /* border-bottom: 1px solid var(--text-color); */
 }
 
 .ly_table li.active {
   font-weight: 900;
   color: var(--signature-color);
-  border-bottom: 3px solid var(--signature-color);
+  /* border-bottom: 3px solid var(--signature-color); */
 }
 
 .ly_table li:hover {
@@ -57,7 +58,7 @@
 }
 
 .ly_table li:last-child {
-  border-bottom: 0px;
+  /* border-bottom: 0px; */
 }
 
 .ly_table a {
@@ -86,24 +87,4 @@
 
   /* size and aligment */
   width: calc(var(--sidebar-width) - 30px + 100vw / 20);
-}
-
-.between {
-  /* styling */
-  border-bottom: 1px solid var(--text-color);
-  bottom: 0;
-}
-
-.line2 {
-  /* arrangement */
-  position: absolute;
-  left: -30px;
-
-  /* size and aligment */
-  width: calc(var(--sidebar-width) - 30px + 100vw / 20);
-}
-
-.bottom {
-  border-bottom: 2px solid var(--text-color);
-  top: 0;
 }

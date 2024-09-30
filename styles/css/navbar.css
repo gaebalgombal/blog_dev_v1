@@ -21,7 +21,7 @@
 
   /* size and alignment */
   box-sizing: border-box;
-  width: 450px;
+  width: var(--sidebar-width);
 
   /* styling */
   list-style-type: none;
