@@ -1,5 +1,7 @@
 import styles from "../styles/globals.module.css";
 import { PostBody } from "@/components/posts/body";
+import { Navbar } from "@/components/posts/navbar";
+
 import { getPostParams } from "@/components/posts/staticParams";
 import { getPostMetaData } from "@/components/posts/metaData";
 import { PostParams, PostProps } from "@/config/types";
@@ -20,7 +22,14 @@ const generateStaticParams = async ({
 
 const Page = async ({ params: { category, slug } }: PostProps) => {
   const params = { lang: "en", category, slug } as PostParams;
-  return <PostBody params={params} />;
+  const navParams = { lang: "en" };
+
+  return (
+    <div>
+      <Navbar params={navParams} />
+      <PostBody params={params} />
+    </div>
+  );
 };
 
 export { generateMetadata, generateStaticParams };

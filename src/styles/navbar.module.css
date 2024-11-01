@@ -50,7 +50,7 @@
   padding: 5px 10px;
 }
 
-.bl_navbar li a {
+.bl_navbar li p {
   /* arrangement */
   display: flex;
   align-items: center;
@@ -70,19 +70,19 @@
   /* transition: 0.25s; */
 }
 
-.bl_navbar li a:hover {
+.bl_navbar li p:hover {
   /* styling */
   color: var(--signature-color);
   font-weight: 600;
 }
 
-.bl_navbar li a.active {
+.bl_navbar li p.active {
   /* styling */
   color: var(--signature-color);
   font-weight: 600;
 }
 
-.bl_navbar li a > .icons {
+.bl_navbar li p > .icons {
   /* size and alignment */
   box-sizing: border-box;
   padding: 0 0 0 1px;
@@ -117,7 +117,7 @@
   display: block;
 }
 
-.bl_navbar li .dropdown a {
+.bl_navbar li .dropdown > a > p {
   box-sizing: border-box;
   padding-bottom: 10px;
 }

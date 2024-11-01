@@ -19,8 +19,17 @@
   --signature-color: #348017;
 }
 /* default settings */
+
 li {
   list-style-type: none; /* Removes the bullet points */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
+
+a,
+p {
+  text-decoration: none; /* Removes the underline */
+  color: none;
   margin: 0; /* Removes default margin */
   padding: 0; /* Removes default padding */
 }

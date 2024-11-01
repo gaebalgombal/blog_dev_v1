@@ -3,7 +3,13 @@ import classNames from "classnames";
 import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
 
-export const Navbar = async ({}) => {
+import { ConditionalLink, ButtonLink } from "@/lib/link";
+
+type Props = {
+  params: { lang: string };
+};
+
+export const Navbar = async ({ params: { lang } }: Props) => {
   const wrapperClass = classNames({
     [navbarStyles["icons-wrapper"]]: true,
     [navbarStyles["active"]]: true,
@@ -25,30 +31,38 @@ export const Navbar = async ({}) => {
         <h1>DEVLOG</h1>
         <ul>
           <li>
-            <a href="#home" className={navbarStyles.active}>
-              홈
-            </a>
+            <ConditionalLink href={{ pathname: `/${lang}/home` }}>
+              {/* <p className={navbarStyles.active}> 홈</p> */}홈
+            </ConditionalLink>
           </li>
           <li>
-            <a href="#services">이력서</a>
+            <ConditionalLink href={{ pathname: `/${lang}/resume` }}>
+              이력서
+            </ConditionalLink>
           </li>
           <li>
-            <a href="#about">포트폴리오</a>
+            <ConditionalLink href={{ pathname: `/${lang}/portfolio` }}>
+              포트폴리오
+            </ConditionalLink>
           </li>
           <li>
-            <a href="#contact">블로그</a>
+            <ConditionalLink href={{ pathname: `/${lang}/posts` }}>
+              블로그
+            </ConditionalLink>
           </li>
           <li>
-            <a href="#languages">
-              언어
-              <span className={iconClass}> keyboard_arrow_down </span>
-            </a>
+            <ButtonLink href={{ pathname: `` }}>언어</ButtonLink>
             <div className={navbarStyles.dropdown}>
-              <a href="#">한국어</a>
-              <a href="#">영어</a>
+              <ConditionalLink href={{ pathname: `/${lang}` }}>
+                한국어
+              </ConditionalLink>
+              <ConditionalLink href={{ pathname: `/${lang}` }}>
+                영어
+              </ConditionalLink>
             </div>
           </li>
-          <li>
+          {/* TODO: 다크모드 구현 */}
+          {/* <li>
             <button
               className={navbarStyles["toggle-button"]}
               id="toggle-button"
@@ -60,7 +74,7 @@ export const Navbar = async ({}) => {
                 <span className={iconClass}> dark_mode </span>
               </span>
             </button>
-          </li>
+          </li> */}
         </ul>
       </div>
     </nav>

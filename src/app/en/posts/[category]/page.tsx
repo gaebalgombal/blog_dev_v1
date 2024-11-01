@@ -9,10 +9,11 @@ const generateStaticParams = async () => {
 
 const Page = async ({ params: { category } }: PostProps) => {
   const params = { lang: "en", category } as PostParams;
+  const navParams = { lang: "en" };
 
   return (
     <div>
-      <Navbar />
+      <Navbar params={navParams} />
       <PostList params={params} />
     </div>
   );
