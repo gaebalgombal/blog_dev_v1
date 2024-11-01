@@ -1,5 +1,6 @@
 import { PostList } from "@/components/posts/list";
 import { Navbar } from "@/components/posts/navbar";
+
 import { PostParams, PostProps } from "@/config/types";
 import { getCategoryParams } from "@/components/posts/staticParams";
 

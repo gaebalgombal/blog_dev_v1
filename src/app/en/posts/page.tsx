@@ -4,11 +4,10 @@ import { PostParams, PostProps } from "@/config/types";
 
 const Page = async () => {
   const params = { lang: "en", category: "**" } as PostParams;
-  const navParams = { lang: "en" };
 
   return (
     <div>
-      <Navbar params={navParams} />
+      <Navbar params={params} />
       <PostList params={params} />
     </div>
   );
