@@ -1,10 +1,12 @@
-import styles from "@/app/styles/page.globals.module.css";
+import styles from "@/styles/layout.module.css";
 
 export default function Home() {
   return (
     <main>
-      <div>
-        <p>BLOG PAGE</p>
+      <div className={styles.ly_main}>
+        <div className={styles.ly_content}>
+          <p>BLOG PAGE</p>
+        </div>
       </div>
     </main>
   );

@@ -1,4 +1,4 @@
-import styles from "@/app/styles/globals.module.css";
+import styles from "../styles/globals.module.css";
 import { getPostList } from "@/lib/posts";
 
 type Props = {

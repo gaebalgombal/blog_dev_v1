@@ -1,4 +1,4 @@
-import styles from "@/app/styles/globals.module.css";
+import styles from "../styles/globals.module.css";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
