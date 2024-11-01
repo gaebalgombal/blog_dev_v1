@@ -67,5 +67,6 @@
   /* size and alignment */
   box-sizing: border-box;
   width: calc(90% - var(--sidebar-width));
+  height: 100%;
   padding: 50px 100px 50px 10px;
 }

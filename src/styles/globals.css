@@ -18,6 +18,12 @@
   --shadow-color: rgba(0, 0, 0, 0.04);
   --signature-color: #348017;
 }
+/* default settings */
+li {
+  list-style-type: none; /* Removes the bullet points */
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
+}
 
 .darkmode {
   --text-color: #ffffff;
