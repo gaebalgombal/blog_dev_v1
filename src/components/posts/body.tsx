@@ -1,4 +1,4 @@
-import styles from "@/app/styles/page.module.css";
+import styles from "@/app/styles/globals.module.css";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
@@ -14,7 +14,7 @@ export const PostBody = async ({
   const post = await getPostDetail({ lang, category, slug });
 
   return (
-    <main className={styles.main}>
+    <main>
       <MDXRemote
         source={post.content}
         options={{

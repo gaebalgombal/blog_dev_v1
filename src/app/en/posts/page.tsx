@@ -1,4 +1,4 @@
-import styles from "@/app/styles/page.module.css";
+import styles from "@/app/styles/globals.module.css";
 import { PostList } from "@/components/posts/list";
 import { PostParams, PostProps } from "@/config/types";
 

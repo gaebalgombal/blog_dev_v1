@@ -1,9 +1,9 @@
-import styles from "@/app/styles/page.module.css";
+import styles from "@/app/styles/page.globals.module.css";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
+    <main>
+      <div>
         <p>BLOG PAGE</p>
       </div>
     </main>

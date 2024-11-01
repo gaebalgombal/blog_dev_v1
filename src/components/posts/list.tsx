@@ -1,4 +1,4 @@
-import styles from "@/app/styles/page.module.css";
+import styles from "@/app/styles/globals.module.css";
 import { getPostList } from "@/lib/posts";
 
 type Props = {
@@ -9,7 +9,7 @@ export const PostList = async ({ params: { lang, category } }: Props) => {
   const postList = await getPostList(lang, category);
 
   return (
-    <ul className={styles.card}>
+    <ul>
       {postList.map((post, i) => (
         <li key={`${post.title}_${i}`}>
           <h2>title: {post.title}</h2>
