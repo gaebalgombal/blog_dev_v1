@@ -16,36 +16,34 @@ export const PostBody = async ({
   const post = await getPostDetail({ lang, category, slug });
 
   return (
-    <main>
-      <div className={layoutStyles.ly_main}>
-        <div className={layoutStyles.ly_content}>
-          <div className={contentStyles.bl_content}>
-            <div className={contentStyles.card}>
-              <h1>카드</h1>
-              <MDXRemote
-                source={post.content}
-                options={{
-                  mdxOptions: {
-                    remarkPlugins: [remarkGfm, remarkBreaks],
-                    rehypePlugins: [
-                      [
-                        rehypePrettyCode,
-                        {
-                          theme: {
-                            dark: "github-dark-dimmed",
-                            light: "github-light",
-                          },
+    <div className={layoutStyles.ly_main}>
+      <div className={layoutStyles.ly_content}>
+        <div className={layoutStyles.bl_content}>
+          <div className={contentStyles.card}>
+            <h1>카드</h1>
+            <MDXRemote
+              source={post.content}
+              options={{
+                mdxOptions: {
+                  remarkPlugins: [remarkGfm, remarkBreaks],
+                  rehypePlugins: [
+                    [
+                      rehypePrettyCode,
+                      {
+                        theme: {
+                          dark: "github-dark-dimmed",
+                          light: "github-light",
                         },
-                      ],
-                      rehypeSlug,
+                      },
                     ],
-                  },
-                }}
-              />
-            </div>
+                    rehypeSlug,
+                  ],
+                },
+              }}
+            />
           </div>
         </div>
       </div>
-    </main>
+    </div>
   );
 };

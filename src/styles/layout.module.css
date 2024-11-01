@@ -17,20 +17,6 @@
   border-bottom: 3px solid black;
 }
 
-.bl_navbar {
-  /* arranagement */
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  /* size and alignment */
-  box-sizing: border-box;
-  width: 90%;
-  height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
-}
-
 .ly_main {
   /* arrangement */
   position: relative;

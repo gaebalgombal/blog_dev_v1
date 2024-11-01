@@ -1,4 +1,5 @@
-@import "./default/layout.css";
-@import "./default/navbar.css";
-@import "./default/sidebar.css";
-@import "./default/content.css";
+@import "./globals.css";
+@import "./layout.module.css";
+@import "./navbar.module.css";
+@import "./sidebar.module.css";
+@import "./content.module.css";

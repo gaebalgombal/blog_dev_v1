@@ -1,4 +1,18 @@
-.bl_navbar h1 {
+.bl_navbar {
+  /* arranagement */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bl_navbar > h1 {
   /* size and alignment */
   box-sizing: border-box;
   padding: 5px 10px;

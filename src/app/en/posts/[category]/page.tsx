@@ -1,5 +1,5 @@
-import styles from "../styles/globals.module.css";
 import { PostList } from "@/components/posts/list";
+import { Navbar } from "@/components/posts/navbar";
 import { PostParams, PostProps } from "@/config/types";
 import { getCategoryParams } from "@/components/posts/staticParams";
 
@@ -9,7 +9,13 @@ const generateStaticParams = async () => {
 
 const Page = async ({ params: { category } }: PostProps) => {
   const params = { lang: "en", category } as PostParams;
-  return <PostList params={params} />;
+
+  return (
+    <div>
+      <Navbar />
+      <PostList params={params} />
+    </div>
+  );
 };
 
 export { generateStaticParams };
