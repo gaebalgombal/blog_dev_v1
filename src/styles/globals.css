@@ -22,7 +22,7 @@
   --sidebar-width: 450px;
 
   /* font */
-  font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
+  font-family: "Noto Sans Mono", "sans-serif";
 
   /* styling */
   --background-color: #ffffff;
@@ -32,21 +32,6 @@
   --text-color2: #353535;
   --shadow-color: rgba(0, 0, 0, 0.04);
   --signature-color: #348017;
-}
-/* default settings */
-
-li {
-  list-style-type: none; /* Removes the bullet points */
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
-}
-
-a,
-p {
-  text-decoration: none; /* Removes the underline */
-  color: none;
-  margin: 0; /* Removes default margin */
-  padding: 0; /* Removes default padding */
 }
 
 .darkmode {
@@ -82,7 +67,47 @@ p {
   font-feature-settings: "liga";
 }
 
+/* default settings */
+
+html,
 body {
   height: 100vh;
   width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+li,
+ul,
+ol {
+  list-style: none; /* Removes default bullets and numbers */
+}
+
+a,
+p,
+div,
+h1,
+h2,
+h3 {
+  text-decoration: none; /* Removes the underline */
+  font: var(--text-color);
+  line-height: 1;
+}
+
+li,
+ul,
+ol,
+a,
+p,
+div,
+h1,
+h2,
+h3,
+table {
+  border: 0;
+  box-sizing: border-box;
+  margin: 0; /* Removes default margin */
+  padding: 0; /* Removes default padding */
 }

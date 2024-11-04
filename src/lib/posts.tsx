@@ -9,7 +9,7 @@ import { CATEGORY_LIST } from "@/config/const";
 const BASE_PATH = "/src/resources";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
 
-const parsePostFile = (postPath: string) => {
+const parsePostFile = async (postPath: string) => {
   const file = fs.readFileSync(postPath, "utf8");
   const { data, content } = matter(file);
 
@@ -30,7 +30,7 @@ const parsePostPath = (postPath: string) => {
 };
 
 const parsePost = async (postPath: string) => {
-  const { data, content } = parsePostFile(postPath);
+  const { data, content } = await parsePostFile(postPath);
   const { category, slug } = parsePostPath(postPath);
   const dateString = dayjs(data.date).locale("ko").format("YYYY년 MM월 DD일");
 

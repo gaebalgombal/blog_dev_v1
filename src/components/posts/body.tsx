@@ -1,14 +1,15 @@
 import layoutStyles from "@/styles/layout.module.css";
 import contentStyles from "@/styles/content.module.css";
+import sidebarStyles from "@/styles/sidebar.module.css";
 
 import { MDXRemote } from "next-mdx-remote/rsc";
 import rehypePrettyCode from "rehype-pretty-code";
 import rehypeSlug from "rehype-slug";
 import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
-import { Post } from "@/config/types";
-import { getPostDetail, getPostList } from "@/lib/posts";
-import { PostParams, PostProps } from "@/config/types";
+import { getPostDetail } from "@/lib/posts";
+import { PostProps } from "@/config/types";
+import { TableMDX } from "@/lib/mdx";
 
 export const PostBody = async ({
   params: { lang, category, slug },
@@ -17,10 +18,17 @@ export const PostBody = async ({
 
   return (
     <div className={layoutStyles.ly_main}>
+      <div className={layoutStyles.ly_sidebar}>
+        <div className={sidebarStyles.bl_sidebar}>
+          <p>On this page ···</p>
+          <ul className={sidebarStyles.ly_table}>
+            <TableMDX source={post.content} />
+          </ul>
+        </div>
+      </div>
       <div className={layoutStyles.ly_content}>
         <div className={layoutStyles.bl_content}>
           <div className={contentStyles.card}>
-            <h1>카드</h1>
             <MDXRemote
               source={post.content}
               options={{
