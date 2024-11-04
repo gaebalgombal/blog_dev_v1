@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "../styles/globals.css";
 
-import { Navbar } from "@/components/posts/navbar";
+import { Navbar } from "@/components/template/navbar";
 
 const lang = "en";
 

@@ -15,12 +15,18 @@ export const PostBody = async ({
   params: { lang, category, slug },
 }: PostProps) => {
   const post = await getPostDetail({ lang, category, slug });
+  const whatIsThisPage = (lang: string) => {
+    if (lang === "en") return "On this page ···";
+    if (lang === "kr") return "··· 목차 ···";
+
+    return "On this page ···";
+  };
 
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_sidebar}>
         <div className={sidebarStyles.bl_sidebar}>
-          <p>On this page ···</p>
+          <p>{whatIsThisPage(lang)}</p>
           <ul className={sidebarStyles.ly_table}>
             <TableMDX source={post.content} />
           </ul>
