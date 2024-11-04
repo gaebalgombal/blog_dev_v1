@@ -27,8 +27,8 @@ export const PostBody = async ({
         </div>
       </div>
       <div className={layoutStyles.ly_content}>
-        <div className={layoutStyles.bl_content}>
-          <div className={contentStyles.card}>
+        <div className={contentStyles.bl_content}>
+          <div className={contentStyles.full}>
             <MDXRemote
               source={post.content}
               options={{

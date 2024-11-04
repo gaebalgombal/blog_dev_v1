@@ -77,6 +77,11 @@ body {
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+
+  /* scroll */
+  scroll-behavior: smooth;
+  /* scroll-margin-top: 20px; */
+  scroll-padding: 50px;
 }
 
 li,
