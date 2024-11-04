@@ -4,6 +4,7 @@ import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
 
 import { ConditionalLink } from "@/lib/link";
+import { NAVBAR_LIST } from "@/config/const";
 
 type Props = {
   params: { lang: string };
@@ -32,28 +33,28 @@ export const Navbar = async ({ params: { lang } }: Props) => {
         <ul>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/home` }}>
-              {/* <p className={navbarStyles.active}> 홈</p> */}홈
+              {NAVBAR_LIST.home?.[lang]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/resume` }}>
-              이력서
+              {NAVBAR_LIST.resume?.[lang]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/portfolio` }}>
-              포트폴리오
+              {NAVBAR_LIST.portfolio?.[lang]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/posts` }}>
-              블로그
+              {NAVBAR_LIST.posts?.[lang]}
             </ConditionalLink>
           </li>
           <li>
             <a href="">
               <p>
-                언어
+                {NAVBAR_LIST.language?.[lang]}
                 <span className={iconClass}> keyboard_arrow_down </span>
               </p>
             </a>
@@ -62,7 +63,7 @@ export const Navbar = async ({ params: { lang } }: Props) => {
                 한국어
               </ConditionalLink>
               <ConditionalLink href={{ pathname: `/${lang}` }}>
-                영어
+                English
               </ConditionalLink>
             </div>
           </li>

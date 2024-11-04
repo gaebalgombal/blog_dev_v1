@@ -1,6 +1,4 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Mono } from "next/font/google";
-import localFont from "next/font/local";
 
 import "../styles/globals.css";
 

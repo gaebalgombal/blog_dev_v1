@@ -7,7 +7,7 @@ export default function Home() {
       <div className={layoutStyles.ly_content}>
         <div className={contentStyles.bl_content}>
           <div className={contentStyles.card}>
-            <h1>BLOG PAGE</h1>
+            <h1>HOME PAGE</h1>
           </div>
         </div>
       </div>
