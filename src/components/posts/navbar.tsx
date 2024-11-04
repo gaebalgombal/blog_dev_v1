@@ -3,7 +3,7 @@ import classNames from "classnames";
 import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
 
-import { ConditionalLink, ButtonLink } from "@/lib/link";
+import { ConditionalLink } from "@/lib/link";
 
 type Props = {
   params: { lang: string };
@@ -51,7 +51,12 @@ export const Navbar = async ({ params: { lang } }: Props) => {
             </ConditionalLink>
           </li>
           <li>
-            <ButtonLink href={{ pathname: `` }}>언어</ButtonLink>
+            <a href="">
+              <p>
+                언어
+                <span className={iconClass}> keyboard_arrow_down </span>
+              </p>
+            </a>
             <div className={navbarStyles.dropdown}>
               <ConditionalLink href={{ pathname: `/${lang}` }}>
                 한국어
