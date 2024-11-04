@@ -74,6 +74,7 @@
   color: var(--text-color);
   font-size: 1.2rem;
 }
+
 .full p {
   /* size and alignment */
   padding-top: 30px;
@@ -81,4 +82,8 @@
   /* styling */
   color: var(--text-color2);
   line-height: 1.2;
+}
+
+.full > *:last-child {
+  padding-bottom: 60px;
 }
