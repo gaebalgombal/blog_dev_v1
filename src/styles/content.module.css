@@ -3,14 +3,13 @@
   height: 100%;
 }
 
-.card {
+.summary {
   /* position: absolute; */
   height: 200px;
-  padding-bottom: 60px;
+  margin-bottom: 60px;
 }
 
-.bl_content h1,
-.card h1 {
+.summary h1 {
   /* size and alignment */
   padding-bottom: 10px;
 
@@ -20,8 +19,7 @@
   font-weight: 700;
 }
 
-.bl_content p,
-.card p {
+.summary p {
   /* size and alignment */
   padding-bottom: 30px;
 
@@ -30,13 +28,11 @@
   font-size: 1rem;
 }
 
-.bl_content span,
-.card span {
+.summary span {
   padding-right: 10px;
 }
 
-.bl_content > .description,
-.card > .description {
+.summary > .description {
   position: relative;
   font-size: 1rem;
   height: 7.5rem;
@@ -44,4 +40,46 @@
   overflow: hidden;
   color: var(--text-color2);
   letter-spacing: 0.5;
+}
+
+.full {
+  height: 100%;
+  width: 100%;
+}
+
+.full h1 {
+  /* size and alignment */
+  padding-bottom: 40px;
+
+  /* styling */
+  color: var(--text-color);
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.full h2 {
+  /* size and alignment */
+  padding-top: 30px;
+
+  /* styling */
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+.full h3 {
+  /* size and alignment */
+  padding-top: 30px;
+
+  /* styling */
+  color: var(--text-color);
+  font-size: 1.2rem;
+}
+.full p {
+  /* size and alignment */
+  padding-top: 30px;
+  padding-bottom: 30px;
+
+  /* styling */
+  color: var(--text-color2);
+  line-height: 1.2;
 }
