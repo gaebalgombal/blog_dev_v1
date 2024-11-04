@@ -1,4 +1,3 @@
-import styles from "../styles/globals.module.css";
 import { PostBody } from "@/components/posts/body";
 import { Navbar } from "@/components/posts/navbar";
 

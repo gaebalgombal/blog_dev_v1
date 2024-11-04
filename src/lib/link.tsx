@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
 
 type Link = { href: { pathname: string }; children: any };
