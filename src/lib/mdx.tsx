@@ -1,22 +1,23 @@
 import { MDXRemote } from "next-mdx-remote/rsc";
 import sidebarStyles from "@/styles/sidebar.module.css";
 import { AnchorLink } from "@/lib/link";
-import Link from "next/link";
 
 const tableComponents = {
   h1: (props: any) => (
-    <li {...props} className={sidebarStyles.h1}>
-      <AnchorLink href={{ pathname: props.children }}> </AnchorLink>{" "}
+    <li className={sidebarStyles.h1}>
+      <AnchorLink {...props} href={{ pathname: props.children }}>
+        {" "}
+      </AnchorLink>
     </li>
   ),
   h2: (props: any) => (
-    <li {...props} className={sidebarStyles.h2}>
-      <AnchorLink href={{ pathname: props.children }}> </AnchorLink>{" "}
+    <li className={sidebarStyles.h2}>
+      <AnchorLink {...props} href={{ pathname: props.children }}></AnchorLink>
     </li>
   ),
   h3: (props: any) => (
-    <li {...props} className={sidebarStyles.h3}>
-      <AnchorLink href={{ pathname: props.children }}> </AnchorLink>{" "}
+    <li className={sidebarStyles.h3}>
+      <AnchorLink {...props} href={{ pathname: props.children }}></AnchorLink>
     </li>
   ),
   p: (props: any) => <p hidden></p>,

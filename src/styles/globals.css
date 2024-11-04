@@ -78,10 +78,9 @@ body {
   box-sizing: border-box;
   overflow-x: hidden;
 
-  /* scroll */
+  scroll-padding-top: 50px;
   scroll-behavior: smooth;
-  /* scroll-margin-top: 20px; */
-  scroll-padding: 50px;
+  /* TODO: set separate feature for scroll auto button(for table title) */
 }
 
 li,
