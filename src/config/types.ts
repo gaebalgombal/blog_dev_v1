@@ -39,4 +39,17 @@ interface Navigation {
   language: Word;
 }
 
-export type { PostParams, PostProps, Post, PostPackage, Word, Navigation };
+interface CatergoryList {
+  retrospects: Word;
+  projects: Word;
+}
+
+export type {
+  PostParams,
+  PostProps,
+  Post,
+  PostPackage,
+  Word,
+  Navigation,
+  CatergoryList,
+};

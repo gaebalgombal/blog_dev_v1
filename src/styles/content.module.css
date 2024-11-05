@@ -4,9 +4,7 @@
 }
 
 .summary {
-  /* position: absolute; */
-  height: 200px;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .summary h1 {
@@ -33,10 +31,11 @@
 }
 
 .summary > .description {
+  /* arrangement */
   position: relative;
+
+  /* styling */
   font-size: 1rem;
-  height: 7.5rem;
-  line-height: 1.5rem;
   overflow: hidden;
   color: var(--text-color2);
   letter-spacing: 0.5;

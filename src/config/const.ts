@@ -1,4 +1,4 @@
-import { Navigation } from "@/config/types";
+import { Navigation, CatergoryList } from "@/config/types";
 
 const NAVBAR_LIST: Navigation = {
   home: {
@@ -23,4 +23,15 @@ const NAVBAR_LIST: Navigation = {
   },
 };
 
-export { NAVBAR_LIST };
+const CATEGORY_LIST: CatergoryList = {
+  retrospects: {
+    en: "retrospects",
+    kr: "회고",
+  },
+  projects: {
+    en: "projects",
+    kr: "프로젝트",
+  },
+};
+
+export { NAVBAR_LIST, CATEGORY_LIST };

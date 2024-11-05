@@ -1,21 +1,34 @@
+"use client";
+
+import { useState } from "react";
+
 import classNames from "classnames";
 
 import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
 
-import { ConditionalLink } from "@/lib/link";
+import { NavLink } from "@/lib/link";
 import { NAVBAR_LIST } from "@/config/const";
 import { PostProps, Word } from "@/config/types";
 
-export const Navbar = async ({ params: { lang } }: PostProps) => {
-  const wrapperClass = classNames({
-    [navbarStyles["icons-wrapper"]]: true,
+export const Navbar = ({ params: { lang } }: PostProps) => {
+  const [isToggleActive, setToggleActive] = useState(false);
+
+  const toggleDropdown = (event: any) => {
+    setToggleActive((prev) => !prev);
+    event.preventDefault();
+
+    return isToggleActive;
+  };
+
+  const dropDownActive = classNames({
+    [navbarStyles["dropdown"]]: true,
     [navbarStyles["active"]]: true,
   });
 
-  const wrapperDarkClass = classNames({
-    [navbarStyles["icons-wrapper"]]: true,
-    [navbarStyles["dark-mode"]]: true,
+  const dropDownDefault = classNames({
+    [navbarStyles["dropdown"]]: true,
+    [navbarStyles["default"]]: true,
   });
 
   const iconClass = classNames({
@@ -29,39 +42,36 @@ export const Navbar = async ({ params: { lang } }: PostProps) => {
         <h1>DEVLOG</h1>
         <ul>
           <li>
-            <ConditionalLink href={{ pathname: `/${lang}/home` }}>
+            <NavLink href={{ pathname: `/${lang}/home` }}>
               {NAVBAR_LIST.home?.[lang as keyof Word]}
-            </ConditionalLink>
+            </NavLink>
           </li>
           <li>
-            <ConditionalLink href={{ pathname: `/${lang}/resume` }}>
+            <NavLink href={{ pathname: `/${lang}/resume` }}>
               {NAVBAR_LIST.resume?.[lang as keyof Word]}
-            </ConditionalLink>
+            </NavLink>
           </li>
           <li>
-            <ConditionalLink href={{ pathname: `/${lang}/portfolio` }}>
+            <NavLink href={{ pathname: `/${lang}/portfolio` }}>
               {NAVBAR_LIST.portfolio?.[lang as keyof Word]}
-            </ConditionalLink>
-          </li>
-          <li>
-            <ConditionalLink href={{ pathname: `/${lang}/posts` }}>
-              {NAVBAR_LIST.posts?.[lang as keyof Word]}
-            </ConditionalLink>
+            </NavLink>
           </li>
           <li>
             <a href="">
+              <p>{NAVBAR_LIST.posts?.[lang as keyof Word]}</p>
+            </a>
+          </li>
+          <li>
+            <a href="" onClick={toggleDropdown}>
               <p>
-                {NAVBAR_LIST.language?.[lang as keyof Word]}
+                {NAVBAR_LIST.language?.[lang as keyof Word]}{" "}
                 <span className={iconClass}> keyboard_arrow_down </span>
               </p>
             </a>
-            <div className={navbarStyles.dropdown}>
-              <ConditionalLink href={{ pathname: `/${lang}` }}>
-                한국어
-              </ConditionalLink>
-              <ConditionalLink href={{ pathname: `/${lang}` }}>
-                English
-              </ConditionalLink>
+            <div className={isToggleActive ? dropDownActive : dropDownDefault}>
+              {/* TODO: 현재 url의 영어/한국어로 가기 */}
+              <NavLink href={{ pathname: `/kr/home` }}>한국어</NavLink>
+              <NavLink href={{ pathname: `/en/home` }}>English</NavLink>
             </div>
           </li>
           {/* TODO: 다크모드 구현 */}

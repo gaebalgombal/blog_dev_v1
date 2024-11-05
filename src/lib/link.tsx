@@ -7,7 +7,7 @@ import navbarStyles from "@/styles/navbar.module.css";
 
 type Link = { href: { pathname: string }; children: any };
 
-const ConditionalLink = (link: Link) => {
+const NavLink = (link: Link) => {
   const pathname = usePathname();
   const ifCurrentLink = pathname === link.href.pathname;
 
@@ -35,4 +35,4 @@ const AnchorLink = (link: Link) => {
   );
 };
 
-export { ConditionalLink, AnchorLink };
+export { NavLink, AnchorLink };

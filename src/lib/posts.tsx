@@ -3,7 +3,14 @@ import fs from "fs";
 import matter from "gray-matter";
 import { sync } from "glob";
 import dayjs from "dayjs";
-import { Post, PostParams, PostPackage } from "@/config/types";
+import {
+  Post,
+  PostParams,
+  PostPackage,
+  Word,
+  CatergoryList,
+} from "@/config/types";
+import { CATEGORY_LIST } from "@/config/const";
 
 const BASE_PATH = "/src/resources";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
@@ -56,14 +63,19 @@ const sortByDate = (postList: Post[]) => {
   return postList.sort((a: Post, b: Post) => (a.date > b.date ? -1 : 1));
 };
 
-const arrangeByCategory = (postList: Post[]) => {
+const arrangeByCategory = (postList: Post[], lang: string) => {
   const reduced = postList.reduce<PostPackage[]>(
     (acc: PostPackage[], cur: Post) => {
-      let curIndex = acc.findIndex((v) => v.category === cur.category);
+      const category =
+        CATEGORY_LIST?.[cur.category as keyof CatergoryList]?.[
+          lang as keyof Word
+        ];
+
+      const curIndex = acc.findIndex((v) => v.category === category);
 
       if (curIndex < 0) {
         acc.push({
-          category: cur.category,
+          category: category,
           postList: [cur],
         });
       } else {
@@ -87,7 +99,7 @@ const getPostList = async (lang: string, category: string) => {
   );
 
   const sorted = sortByDate(postList);
-  const arranged = arrangeByCategory(sorted);
+  const arranged = arrangeByCategory(sorted, lang);
 
   return { postList: sorted, postPackageList: arranged };
 };

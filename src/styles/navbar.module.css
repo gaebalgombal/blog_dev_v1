@@ -94,7 +94,6 @@
 
 .bl_navbar li .dropdown {
   /* arrangement */
-  display: none;
   position: absolute;
   top: calc(var(--navbar-height));
   right: 10px;
@@ -109,12 +108,16 @@
   background-color: var(--background-color);
 }
 
-.bl_navbar li:hover .dropdown {
+.bl_navbar li .dropdown:hover {
   display: block;
 }
 
-.bl_navbar li .dropdown:hover {
+.active {
   display: block;
+}
+
+.default {
+  display: none;
 }
 
 .bl_navbar li .dropdown > a > p {
