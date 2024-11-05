@@ -6,7 +6,7 @@ export const getPostParams = async (lang: string) => {
   return paramsList;
 };
 
-export const getCategoryParams = async (lang: string) => {
-  const categoryList: string[] = getCategoryList(lang);
-  return categoryList;
-};
+// export const getCategoryParams = async (lang: string) => {
+//   const categoryList: string[] = getCategoryList(lang);
+//   return categoryList;
+// };

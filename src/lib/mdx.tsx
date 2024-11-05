@@ -5,9 +5,7 @@ import { AnchorLink } from "@/lib/link";
 const tableComponents = {
   h1: (props: any) => (
     <li className={sidebarStyles.h1}>
-      <AnchorLink {...props} href={{ pathname: props.children }}>
-        {" "}
-      </AnchorLink>
+      <AnchorLink {...props} href={{ pathname: props.children }}></AnchorLink>
     </li>
   ),
   h2: (props: any) => (
