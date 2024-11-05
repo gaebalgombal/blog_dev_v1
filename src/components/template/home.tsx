@@ -11,7 +11,7 @@ const HomeEN = ({ params: {} }) => {
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_full_content}>
-        <h1>
+        <div className={typoStyles.en_headline_container}>
           <div className={sloganOblique}>HELLO WORLD!</div>
           <div>
             <span className={typoStyles.en_slogan_light}>I'm </span>
@@ -24,7 +24,7 @@ const HomeEN = ({ params: {} }) => {
             </span>
             <span className={typoStyles.en_slogan_signature}>.</span>
           </div>
-        </h1>
+        </div>
       </div>
     </div>
   );

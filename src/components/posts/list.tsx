@@ -69,7 +69,7 @@ export const PostList = async ({
                 pathname: `/${post.url}`,
               }}
             >
-              <li className={contentStyles.summary} key={`${post.title}_${i}`}>
+              <li className={contentStyles.summary} key={`${post.url}_${i}`}>
                 <h1>{post.title}</h1>
                 <p>
                   <span className={contentStyles.date}>{post.dateString}</span>

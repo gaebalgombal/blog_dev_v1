@@ -57,9 +57,9 @@ export const Navbar = ({ params: { lang } }) => {
             </NavLink>
           </li>
           <li>
-            <a href="">
-              <p>{NAVBAR_LIST.posts?.[lang as keyof Word]}</p>
-            </a>
+            <NavLink href={{ pathname: `/${lang}/posts` }}>
+              {NAVBAR_LIST.posts?.[lang as keyof Word]}
+            </NavLink>
           </li>
           <li>
             <a href="" onClick={toggleDropdown}>
