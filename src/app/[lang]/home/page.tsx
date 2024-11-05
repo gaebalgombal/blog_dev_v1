@@ -1,16 +1,20 @@
-import layoutStyles from "@/styles/layout.module.css";
-import contentStyles from "@/styles/content.module.css";
+import Template from "@/app/template";
+import { HomeEN, HomeKR } from "@/components/template/home";
 
-export default function Home() {
+type Props = {
+  params: {
+    lang: string;
+  };
+};
+
+const Home = async ({ params: { lang } }: Props) => {
+  const params = { lang };
+
   return (
-    <div className={layoutStyles.ly_main}>
-      <div className={layoutStyles.ly_content}>
-        <div className={contentStyles.bl_content}>
-          <div className={contentStyles.card}>
-            <h1>HOME PAGE</h1>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Template params={params}>
+      {lang === "en" ? <HomeEN params={params} /> : <HomeKR params={params} />}
+    </Template>
   );
-}
+};
+
+export default Home;

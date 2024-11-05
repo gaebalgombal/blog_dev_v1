@@ -5,11 +5,7 @@ import { PostParams, PostProps } from "@/config/types";
 const Page = async ({ params: { lang, category, slug } }: PostProps) => {
   const params = { lang, category, slug: "**" } as PostParams;
 
-  return (
-    <div>
-      <PostList params={params} />
-    </div>
-  );
+  return <PostList params={params} />;
 };
 
 export default Page;

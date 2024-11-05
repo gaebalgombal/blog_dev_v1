@@ -53,6 +53,19 @@
   /* size and alignment */
   box-sizing: border-box;
   width: calc(90% - var(--sidebar-width));
-  height: 100vh;
+  height: 100%;
+  padding: 50px 100px 50px 10px;
+}
+
+.ly_full_content {
+  /* arrangement */
+  position: absolute;
+  top: var(--navbar-height);
+  left: 5%;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
   padding: 50px 100px 50px 10px;
 }

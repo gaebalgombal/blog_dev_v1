@@ -1,0 +1,74 @@
+.en_slogan_default {
+  font-family: "Teko";
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.en_slogan_light {
+  font-family: "Teko";
+  font-size: 6rem;
+  font-weight: 400;
+  margin-bottom: 50px;
+}
+
+.en_slogan_emphasis {
+  font-family: "Love Ya Like A Sister";
+  font-size: 8.5rem;
+  font-weight: 900;
+  color: var(--signature-color);
+}
+
+.en_slogan_oblique {
+  /* oblique */
+  transform: skew(-10deg);
+}
+
+.en_half_reading {
+  margin-top: -4.5rem;
+}
+
+.en_slogan_signature {
+  font-family: "Love Ya Like A Sister";
+  font-size: 12rem;
+  font-weight: 900;
+  color: var(--signature-color);
+}
+
+.en_slogan_giant {
+  font-family: "Teko";
+  font-size: 6rem;
+  font-weight: 900;
+}
+
+.kr_slogan_giant {
+  font-family: "Pretendard variable";
+  font-size: 6rem;
+  font-weight: 900;
+  margin-bottom: 140px;
+}
+
+.kr_slogan_default {
+  font-family: "Pretendard variable";
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-color2);
+}
+
+.kr_slogan_emphasis {
+  font-family: "YoonChildfundkoreaManSeh";
+  font-size: 2rem;
+  font-weight: 900;
+  text-align: left;
+  color: var(--text-color2);
+
+  /* font-style: oblique; */
+}
+
+.kr_headline_container {
+  margin-bottom: 140px;
+}
+
+.kr_description_container {
+  margin-bottom: 15px;
+}

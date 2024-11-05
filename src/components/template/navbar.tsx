@@ -9,9 +9,9 @@ import navbarStyles from "@/styles/navbar.module.css";
 
 import { NavLink } from "@/lib/link";
 import { NAVBAR_LIST } from "@/config/const";
-import { PostProps, Word } from "@/config/types";
+import { Word } from "@/config/types";
 
-export const Navbar = ({ params: { lang } }: PostProps) => {
+export const Navbar = ({ params: { lang } }) => {
   const [isToggleActive, setToggleActive] = useState(false);
 
   const toggleDropdown = (event: any) => {

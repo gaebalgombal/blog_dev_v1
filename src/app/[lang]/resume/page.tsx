@@ -1,11 +1,24 @@
-import styles from "../styles/globals.module.css";
+import Template from "@/app/template";
+import { CommingSoonEN, CommingSoonKR } from "@/components/template/comming";
 
-export default function Home() {
+type Props = {
+  params: {
+    lang: string;
+  };
+};
+
+const Resume = async ({ params: { lang } }: Props) => {
+  const params = { lang };
+
   return (
-    <main>
-      <div>
-        <p>RESUME PAGE</p>
-      </div>
-    </main>
+    <Template params={params}>
+      {lang === "en" ? (
+        <CommingSoonEN params={params} />
+      ) : (
+        <CommingSoonKR params={params} />
+      )}
+    </Template>
   );
-}
+};
+
+export default Resume;

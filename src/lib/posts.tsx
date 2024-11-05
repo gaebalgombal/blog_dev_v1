@@ -16,6 +16,7 @@ const BASE_PATH = "/src/resources";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
 
 const parsePostFile = async (postPath: string) => {
+  // TODO: 파일 경로가 없을 경우 예외처리(홈 화면으로 리다이렉트)
   const file = fs.readFileSync(postPath, "utf8");
   const { data, content } = matter(file);
 
