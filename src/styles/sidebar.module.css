@@ -35,7 +35,7 @@
   position: relative;
 
   /* size and alignment */
-  padding: 10px 0px 70px 10px;
+  margin: 10px 0px 70px 10px;
 
   /* styling */
   color: var(--text-color1);
@@ -48,8 +48,7 @@
   position: relative;
 
   /* size and alignment */
-  margin: 10px 0;
-  padding: 0px 0px 0px 10px;
+  margin: 10px 0px 0px 10px;
   height: 20px;
 
   /* styling */
@@ -63,14 +62,46 @@
   position: relative;
 
   /* size and alignment */
-  margin: 10px 0;
-  padding: 0px 0px 0px 10px;
+  margin: 10px 0px 0px 10px;
   height: 20px;
 
   /* styling */
   color: var(--text-color2);
   font-size: 1rem;
   font-weight: 500;
+}
+
+/* TODO: h1, h2, h3랑 클래스 적절하게 다시 분리,합성하기 */
+
+.h1_category {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0px 30px 10px;
+
+  /* styling */
+  color: var(--text-color1);
+  font-size: 2.5em;
+  font-weight: 900;
+}
+
+.h2_title {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0 0 10px;
+  height: 20px;
+
+  /* styling */
+  color: var(--text-color2);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+ul > .h2_title:last-child {
+  margin-bottom: 30px;
 }
 
 .ly_table li.active {

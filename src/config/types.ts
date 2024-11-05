@@ -10,29 +10,33 @@ interface PostProps {
 
 interface Post extends PostParams {
   title: string;
+  category: string;
+
   date: Date;
   dateString: string;
+
   desc: string;
   url: string;
+
   content: string;
 }
 
-interface Category {
-  en: string;
-  kr: string;
+interface PostPackage {
+  category: string;
+  postList: Post[];
 }
 
-interface Name {
+interface Word {
   en: string;
   kr: string;
 }
 
 interface Navigation {
-  home: Name;
-  resume: Name;
-  portfolio: Name;
-  posts: Name;
-  language: Name;
+  home: Word;
+  resume: Word;
+  portfolio: Word;
+  posts: Word;
+  language: Word;
 }
 
-export type { PostParams, PostProps, Post, Category, Name, Navigation };
+export type { PostParams, PostProps, Post, PostPackage, Word, Navigation };

@@ -1,17 +1,48 @@
 import layoutStyles from "@/styles/layout.module.css";
 import contentStyles from "@/styles/content.module.css";
+import sidebarStyles from "@/styles/sidebar.module.css";
 
 import { getPostList } from "@/lib/posts";
+import { PostProps, PostPackage } from "@/config/types";
 
-type Props = {
-  params: { lang: string; category: string };
-};
-
-export const PostList = async ({ params: { lang, category } }: Props) => {
-  const postList = await getPostList(lang, category);
+export const PostList = async ({
+  params: { lang, category, slug },
+}: PostProps) => {
+  const { postList, postPackageList } = await getPostList(lang, category);
 
   return (
     <div className={layoutStyles.ly_main}>
+      <div className={layoutStyles.ly_sidebar}>
+        <div className={sidebarStyles.bl_sidebar}>
+          <p>On this site ···</p>
+          <div className={sidebarStyles.ly_table} key={`cateogory_and_titles`}>
+            <ul>
+              {postPackageList.map((postPackage: PostPackage, i) => (
+                <li key={`${postPackage.category}_${i}`}>
+                  <div className={sidebarStyles.h1_category}>
+                    <a href={`/${lang}/posts/${postPackage.category}`}>
+                      {postPackage.category}
+                    </a>
+                  </div>
+                  <ul>
+                    {postPackage.postList.map((post, j) => (
+                      <li
+                        className={sidebarStyles.h2_title}
+                        key={`${postPackage.category}_${i}_${post.title}_${j}`}
+                      >
+                        <a href={`/${post.url}`}>{`${post.title} > `}</a>
+                      </li>
+                    ))}
+                    <li className={sidebarStyles.h2_title} key={`more_posts`}>
+                      <a href={`/${postPackage.category}`}>{`MORE ··· >`}</a>
+                    </li>
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
       <div className={layoutStyles.ly_content}>
         <ul className={contentStyles.bl_content}>
           {postList.map((post, i) => (
