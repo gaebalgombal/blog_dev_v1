@@ -19,6 +19,7 @@ const NavLink = (link: Link) => {
   };
 
   return (
+    // TODO: 링크 컴포넌트 통합
     <Link href={link.href} onClick={handleClick} passHref>
       <p className={ifCurrentLink ? navbarStyles.active : ""}>
         {link.children}

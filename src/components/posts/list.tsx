@@ -48,7 +48,7 @@ export const PostList = async ({
                     <li className={sidebarStyles.h2_title} key={`more_posts`}>
                       <Link
                         href={{
-                          pathname: `/${postPackage.category}`,
+                          pathname: `/${lang}/posts/${postPackage.category}`,
                         }}
                       >
                         {lang === "en" ? `MORE ··· >` : `더보기 ··· >`}
