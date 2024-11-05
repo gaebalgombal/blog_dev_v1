@@ -5,12 +5,9 @@ import navbarStyles from "@/styles/navbar.module.css";
 
 import { ConditionalLink } from "@/lib/link";
 import { NAVBAR_LIST } from "@/config/const";
+import { PostProps, Name } from "@/config/types";
 
-type Props = {
-  params: { lang: string };
-};
-
-export const Navbar = async ({ params: { lang } }: Props) => {
+export const Navbar = async ({ params: { lang } }: PostProps) => {
   const wrapperClass = classNames({
     [navbarStyles["icons-wrapper"]]: true,
     [navbarStyles["active"]]: true,
@@ -33,28 +30,29 @@ export const Navbar = async ({ params: { lang } }: Props) => {
         <ul>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/home` }}>
-              {NAVBAR_LIST.home?.[lang]}
+              {NAVBAR_LIST.home?.[lang as keyof Name]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/resume` }}>
-              {NAVBAR_LIST.resume?.[lang]}
+              {NAVBAR_LIST.resume?.[lang as keyof Name]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/portfolio` }}>
-              {NAVBAR_LIST.portfolio?.[lang]}
+              {NAVBAR_LIST.portfolio?.[lang as keyof Name]}
             </ConditionalLink>
           </li>
           <li>
             <ConditionalLink href={{ pathname: `/${lang}/posts` }}>
-              {NAVBAR_LIST.posts?.[lang]}
+              {NAVBAR_LIST.posts?.[lang as keyof Name]}
             </ConditionalLink>
           </li>
           <li>
+            s
             <a href="">
               <p>
-                {NAVBAR_LIST.language?.[lang]}
+                {NAVBAR_LIST.language?.[lang as keyof Name]}
                 <span className={iconClass}> keyboard_arrow_down </span>
               </p>
             </a>

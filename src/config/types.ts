@@ -22,4 +22,17 @@ interface Category {
   kr: string;
 }
 
-export type { PostParams, PostProps, Post, Category };
+interface Name {
+  en: string;
+  kr: string;
+}
+
+interface Navigation {
+  home: Name;
+  resume: Name;
+  portfolio: Name;
+  posts: Name;
+  language: Name;
+}
+
+export type { PostParams, PostProps, Post, Category, Name, Navigation };
