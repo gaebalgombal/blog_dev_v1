@@ -47,6 +47,11 @@
   margin-bottom: 140px;
 }
 
+.kr_slogan_oblique {
+  /* oblique */
+  transform: skew(-10deg);
+}
+
 .kr_slogan_default {
   font-family: "Pretendard variable";
   font-size: 2rem;

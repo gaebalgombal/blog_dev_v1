@@ -4,8 +4,8 @@ import classNames from "classnames";
 
 const CommingSoonEN = ({ params: {} }) => {
   const sloganOblique = classNames({
-    [typoStyles["slogan_oblique"]]: true,
-    [typoStyles["slogan_default"]]: true,
+    [typoStyles["en_slogan_oblique"]]: true,
+    [typoStyles["en_slogan_default"]]: true,
   });
 
   return (
@@ -20,12 +20,15 @@ const CommingSoonEN = ({ params: {} }) => {
 };
 
 const CommingSoonKR = ({ params: {} }) => {
+  const sloganOblique = classNames({
+    [typoStyles["kr_slogan_giant"]]: true,
+    [typoStyles["kr_slogan_oblique"]]: true,
+  });
+
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_full_content}>
-        <h1>
-          <div className={typoStyles.kr_slogan_default}>커밍쑨 ···</div>
-        </h1>
+        <div className={sloganOblique}>커밍쑨 ···</div>
       </div>
     </div>
   );
