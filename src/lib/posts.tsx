@@ -88,8 +88,6 @@ const arrangeByCategory = (postList: Post[], lang: string) => {
     []
   );
 
-  // TODO: 현재페이지/카테고리인 경우, 링크 제외
-
   return reduced;
 };
 

@@ -86,7 +86,6 @@ body {
 
   scroll-padding-top: 50px;
   scroll-behavior: smooth;
-  /* TODO: set separate feature for scroll auto button(for table title) */
 }
 
 li,

@@ -71,8 +71,6 @@
   font-weight: 500;
 }
 
-/* TODO: h1, h2, h3랑 클래스 적절하게 다시 분리,합성하기 */
-
 .h1_category {
   /* arrangemeng */
   position: relative;
