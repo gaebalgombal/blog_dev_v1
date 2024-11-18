@@ -13,38 +13,28 @@ export const PostList = async ({
   params: { lang, category, slug },
 }: PostProps) => {
   const { postList, postPackageList } = await getPostList(lang, category);
-
+  
   const hover = {
     [typoStyles["signature_en"]]: lang === 'en' ? true : false,
     [typoStyles["signature_kr"]]: lang === 'kr' ? true : false,
   }
 
-  const summary = classNames({
-    [contentStyles["summary"]]: true,
-    ...hover,
-  });
-
-  const h1_category = classNames({
+  const h1Category = classNames({
     [sidebarStyles["h1_category"]]: true,
     [typoStyles["signature_color"]]: true,
     ...hover,
   });
 
-  const h2_title = classNames({
+  const h2Title = classNames({
     [sidebarStyles["h2_title"]]: true,
     [typoStyles["signature_color"]]: true,
     ...hover,
   });
 
-const summaryDate = classNames({
-    [contentStyles.date] : true,
-    [contentStyles.clickable] : true,
-  })
-
-  const summaryCategory = classNames({
-    [contentStyles.category] : true,
-    [contentStyles.clickable] : true,
-  })
+  const clickable = classNames({
+    [contentStyles.clickable]: true,
+    ...hover,
+  });
 
   return (
     <div className={layoutStyles.ly_main}>
@@ -55,7 +45,7 @@ const summaryDate = classNames({
             <ul>
               {postPackageList.map((postPackage: PostPackage, i) => (
                 <li key={`${postPackage.category}_${i}`}>
-                  <div className={h1_category}>
+                  <div className={h1Category}>
                     <Link
                       href={{
                         pathname: `/${lang}/posts/${postPackage.category}`,
@@ -67,7 +57,7 @@ const summaryDate = classNames({
                   <ul>
                     {postPackage.postList.map((post, j) => (
                       <li
-                        className={h2_title}
+                        className={h2Title}
                         key={`${postPackage.category}_${i}_${post.title}_${j}`}
                       >
                         <Link
@@ -79,7 +69,7 @@ const summaryDate = classNames({
                         </Link>
                       </li>
                     ))}
-                    <li className={h2_title} key={`more_posts`}>
+                    <li className={h2Title} key={`more_posts`}>
                       <Link
                         href={{
                           pathname: `/${lang}/posts/${postPackage.category}`,
@@ -96,34 +86,37 @@ const summaryDate = classNames({
         </div>
       </div>
       <div className={layoutStyles.ly_content}>
-        <ul className={contentStyles.bl_content}>
+        <div className={contentStyles.bl_content}>
           {postList.map((post, i) => (
             <Link
-              href={{
-                pathname: `/${post.url}`,
-              }}
-            >
-              <li className={summary} key={`${post.url}_${i}`}>
-                <h1>
-                  <span className={contentStyles.clickable}>
-                    {post.title}
-                  </span>
-                  </h1>
-                <p>
-                  <span className={summaryDate}>{post.dateString}</span>
-                  <span className={summaryCategory}>
-                    {post.category}
-                  </span>
-                </p>
-                <div className={contentStyles.description}>
-                <span className={contentStyles.clickable}>
-                  {post.description?.length ? post.description : post.content}
-                </span>
+                href={{
+                  pathname: `/${post.url}`,
+                }}
+                key={`link_${post.url}_${i}`}
+              >
+                <div className={clickable}>
+                    <div className={contentStyles.summary} key={`div_${post.url}_${i}`}>
+                        <h1 className={classNames(hover)}>
+                          <span>
+                            {post.title}
+                          </span>
+                        </h1>
+                        <p>
+                          <span>
+                            {post.dateString}&nbsp;&nbsp;
+                            {post.category}
+                          </span>
+                        </p>
+                        <div className={contentStyles.description}>
+                          <span>
+                            {post.description?.length ? post.description : post.content}
+                          </span>
+                        </div>
+                  </div>
                 </div>
-              </li>
             </Link>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );

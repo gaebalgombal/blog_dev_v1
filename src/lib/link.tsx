@@ -34,7 +34,7 @@ const LangLink = ({ params: { key, value } } : Params) => {
 const MenuLink = ({ params: { key, value } } : Params) => {
   const pathname = usePathname().split('/') || [];
   const curLang = pathname[1] || '';
-  const curMenu = pathname[2] || '';
+  const curMenu = pathname[2] || '';  
 
   const to = '/' + curLang + '/' + key;
 
@@ -43,7 +43,7 @@ const MenuLink = ({ params: { key, value } } : Params) => {
     [typoStyles["signature_en"]]: true,
     [typoStyles["signature_en"]]: curLang === 'en' ? true : false,
     [typoStyles["signature_kr"]]: curLang === 'kr' ? true : false,
-    [navbarStyles["active"]]: curMenu === value ? true : false,
+    [navbarStyles["active"]]: curMenu === key ? true : false,
   });
 
   return (

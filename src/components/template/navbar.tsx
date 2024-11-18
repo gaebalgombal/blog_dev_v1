@@ -79,7 +79,7 @@ export const Navbar = ({ params: { lang } } : Props) => {
     
     if (after === 'dark') {
       document.body.classList.add("darkmode");
-    } else {
+    } else if (after === 'light') {
       document.body.classList.remove("darkmode");
     }
     
