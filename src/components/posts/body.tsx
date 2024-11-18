@@ -10,11 +10,17 @@ import remarkGfm from "remark-gfm";
 import { getPostDetail } from "@/lib/posts";
 import { PostProps } from "@/config/types";
 import { TableMDX } from "@/lib/mdx";
+import { Alert } from "@/components/template/alert";
 
 export const PostBody = async ({
   params: { lang, category, slug },
 }: PostProps) => {
-  const post = await getPostDetail({ lang, category, slug });
+  const post = await getPostDetail({ lang, category, slug });  
+
+  if (!post) {
+    return <Alert params={{message: '존재하지 않는 글입니다.', link: `/${lang}/posts`}}/>
+  }
+
   const whatIsThisPage = (lang: string) => {
     if (lang === "en") return "On this page ···";
     if (lang === "kr") return "··· 목차 ···";

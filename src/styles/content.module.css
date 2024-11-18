@@ -5,12 +5,15 @@
 
 .summary {
   margin-bottom: 30px;
+
+  /* event */
+  pointer-events: none;
 }
 
 .summary h1 {
   /* size and alignment */
   padding-bottom: 10px;
-
+  
   /* styling */
   color: var(--text-color);
   font-size: 2.5rem;
@@ -44,8 +47,7 @@
 }
 
 .summary > .description::after {
-  content: "···";
-  /* TODO: overflow:hidden 요소일 때도 말줄임표 나타나게 구현 */
+  content: "[···]";
 }
 
 .full {
@@ -59,7 +61,7 @@
 
   /* styling */
   color: var(--text-color);
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 900;
 }
 
@@ -94,3 +96,8 @@
   padding-bottom: 60px;
 }
 
+.clickable {
+  /* event */
+  pointer-events: auto;
+  cursor: pointer;
+}

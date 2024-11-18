@@ -25,18 +25,19 @@
 
   --navbar-height: 50px;
   --navbar-padding: 10px;
-  --sidebar-width: 450px;
+  --sidebar-width: 600px;
 
   /* font */
   font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
 
   /* styling */
+  --text-color: #000000;
+  --text-color2: #353535;
   --background-color: #ffffff;
   --background-color2: #eaeaea;
   --background-color3: #bdbdbd;
-  --text-color: #000000;
-  --text-color2: #353535;
   --shadow-color: rgba(0, 0, 0, 0.04);
+  --border-color: #000000;
   --signature-color: #348017;
 }
 
@@ -45,7 +46,10 @@
   --text-color2: #eaeaea;
   --background-color: #000000;
   --background-color2: #353535;
-  --shadow-color: rgba(255, 255, 255, 0.04);
+  --background-color3: #a3a3a3;
+  --signature-color: #75fb4c;
+  --border-color: #75fb4c;
+  --shadow-color: transparent;
 }
 
 .material-icons {
@@ -86,6 +90,7 @@ body {
 
   scroll-padding-top: 50px;
   scroll-behavior: smooth;
+  background-color: var(--background-color);
 }
 
 li,
@@ -101,7 +106,7 @@ h1,
 h2,
 h3 {
   text-decoration: none; /* Removes the underline */
-  font: var(--text-color);
+  color: var(--text-color);
   line-height: 1;
 }
 
@@ -120,6 +125,6 @@ table {
   margin: 0; /* Removes default margin */
   padding: 0; /* Removes default padding */
   text-decoration: none; /* Removes the underline */
-  font: var(--text-color);
+  color: var(--text-color);
   line-height: 1;
 }

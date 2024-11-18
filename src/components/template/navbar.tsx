@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-
 import classNames from "classnames";
+import Cookies from 'js-cookie';
 
 import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
@@ -18,6 +18,7 @@ type Props = {
 
 export const Navbar = ({ params: { lang } } : Props) => {
   const [isToggleActive, setToggleActive] = useState(false);
+  const [isDarkActive, setDarkActive] = useState(false);
 
   const toggleDropdown = (event: any) => {
     setToggleActive((prev) => !prev);    
@@ -57,6 +58,34 @@ export const Navbar = ({ params: { lang } } : Props) => {
     [navbarStyles["visible"]]: true
   });
 
+  let lightMode = classNames({
+    [navbarStyles.icons_wrapper] : true,
+    [navbarStyles.active] : Cookies.get('mode') !== 'dark' ? true : false,
+  });
+
+  let darkMode = classNames({
+    [navbarStyles.icons_wrapper] : true,
+    [navbarStyles.active] : Cookies.get('mode') === 'dark' ? true : false,
+    [navbarStyles.dark_mode] : Cookies.get('mode') === 'dark'? true : false,
+  });
+
+  const handleButton = () => {
+    const cur = Cookies.get('mode')
+    const to = cur === 'dark' ? 'light' : 'dark';
+    Cookies.set('mode', to, {expires: 1});
+    setDarkActive((prev) => !prev);
+    
+    const after = Cookies.get('mode')
+    
+    if (after === 'dark') {
+      document.body.classList.add("darkmode");
+    } else {
+      document.body.classList.remove("darkmode");
+    }
+    
+    return isDarkActive;
+  }
+
   return (
     <nav className={layoutStyles.ly_navbar}>
       <div className={navbarStyles.bl_navbar}>
@@ -93,12 +122,12 @@ export const Navbar = ({ params: { lang } } : Props) => {
               <div>
                 <span className={navbarStyles.hidden}>
                   {NAVBAR_LIST.language?.[lang as keyof Word]}
-                  &nbsp;
+                  {/* &nbsp; */}
                   <span className={iconClass}>keyboard_arrow_down</span>
                 </span>
                 <p className={liClass}>
                   {NAVBAR_LIST.language?.[lang as keyof Word]}
-                  &nbsp;
+                  {/* &nbsp; */}
                   <span className={iconClass}>keyboard_arrow_down</span>
                 </p>
                 {/* <p className={iconClass}> keyboard_arrow_down </p> */}
@@ -111,20 +140,20 @@ export const Navbar = ({ params: { lang } } : Props) => {
               <LangLink params={{ key: `en`, value: 'English' }}></LangLink>
             </div>
           </li>
-          {/* TODO: 다크모드 구현 */}
-          {/* <li>
+          <li>
             <button
-              className={navbarStyles["toggle-button"]}
-              id="toggle-button"
+              className={navbarStyles["toggle_button"]}
+              onClick={handleButton}
+              id="toggle_button"
             >
-              <span className={wrapperClass}>
+              <span className={lightMode}>
                 <span className={iconClass}> wb_sunny </span>
               </span>
-              <span className={wrapperDarkClass}>
+              <span className={darkMode}>
                 <span className={iconClass}> dark_mode </span>
               </span>
             </button>
-          </li> */}
+          </li>
         </ul>
       </div>
     </nav>

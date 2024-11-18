@@ -11,6 +11,7 @@ interface PostProps {
 interface Post extends PostParams {
   title: string;
   category: string;
+  description: string;
 
   date: Date;
   dateString: string;

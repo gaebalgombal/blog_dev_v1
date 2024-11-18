@@ -15,12 +15,15 @@ import { CATEGORY_LIST } from "@/config/const";
 const BASE_PATH = "/src/resources";
 const POSTS_PATH = path.join(process.cwd(), BASE_PATH);
 
-const parsePostFile = async (postPath: string) => {
-  // TODO: 파일 경로가 없을 경우 예외처리(홈 화면으로 리다이렉트)
-  const file = fs.readFileSync(postPath, "utf8");
-  const { data, content } = matter(file);
+const ifPostFileExists = (postPath: string) => {
+  return fs.existsSync(postPath)
+}
 
-  return { data, content };
+const parsePostFile = async (postPath: string) => {
+    const file = fs.readFileSync(postPath, "utf8");    
+    const { data, content } = matter(file);
+    
+    return { data, content };
 };
 
 const parsePostPath = (postPath: string) => {
@@ -105,6 +108,10 @@ const getPostList = async (lang: string, category: string) => {
 
 const getPostDetail = async (params: PostParams) => {
   const filePath = `${POSTS_PATH}/${params.lang}/posts/${params.category}/${params.slug}.mdx`;
+  
+  if (!ifPostFileExists(filePath)) { 
+    return false;
+  }
   const detail = await parsePost(filePath);
 
   return detail;

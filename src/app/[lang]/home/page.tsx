@@ -8,7 +8,7 @@ type Props = {
 };
 
 const Home = async ({ params: { lang } }: Props) => {
-  const params = { lang };
+  const params = { lang };  
 
   return (
     <div>

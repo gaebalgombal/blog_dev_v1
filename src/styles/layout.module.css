@@ -14,7 +14,7 @@
   background-color: var(--background-color);
   color: var(--text-color);
   box-shadow: var(--shadow-color) 0px 10px 15px 0px;
-  border-bottom: 3px solid black;
+  border-bottom: var(--border-color) 3px solid;
 }
 
 .ly_main {

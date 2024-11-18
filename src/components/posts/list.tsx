@@ -36,6 +36,15 @@ export const PostList = async ({
     ...hover,
   });
 
+const summaryDate = classNames({
+    [contentStyles.date] : true,
+    [contentStyles.clickable] : true,
+  })
+
+  const summaryCategory = classNames({
+    [contentStyles.category] : true,
+    [contentStyles.clickable] : true,
+  })
 
   return (
     <div className={layoutStyles.ly_main}>
@@ -86,7 +95,7 @@ export const PostList = async ({
           </div>
         </div>
       </div>
-      <div className={layoutStyles.ly_content} >
+      <div className={layoutStyles.ly_content}>
         <ul className={contentStyles.bl_content}>
           {postList.map((post, i) => (
             <Link
@@ -95,15 +104,22 @@ export const PostList = async ({
               }}
             >
               <li className={summary} key={`${post.url}_${i}`}>
-                <h1>{post.title}</h1>
+                <h1>
+                  <span className={contentStyles.clickable}>
+                    {post.title}
+                  </span>
+                  </h1>
                 <p>
-                  <span className={contentStyles.date}>{post.dateString}</span>
-                  <span className={contentStyles.category}>
+                  <span className={summaryDate}>{post.dateString}</span>
+                  <span className={summaryCategory}>
                     {post.category}
                   </span>
                 </p>
-                <div className={contentStyles.description}>{post.content}</div>
-                <br />
+                <div className={contentStyles.description}>
+                <span className={contentStyles.clickable}>
+                  {post.description?.length ? post.description : post.content}
+                </span>
+                </div>
               </li>
             </Link>
           ))}

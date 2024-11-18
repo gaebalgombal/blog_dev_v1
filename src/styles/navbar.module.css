@@ -110,7 +110,7 @@
   /* arrangement */
   position: absolute;
   top: calc(var(--navbar-height) * 0.6);
-  right: calc(var(--sidebar-width) / 12);
+  right: calc(var(--sidebar-width) * 0.06);
 
   /* size and alignment */
   box-sizing: border-box;
@@ -118,7 +118,7 @@
   width: calc(var(--sidebar-width) / 4);
 
   /* styling */
-  border: 1px solid black;
+  border: 1px solid var(--text-color);
   background-color: var(--background-color);
 }
 
@@ -146,7 +146,7 @@
   color: var(--signature-color);
 }
 
-.toggle-button {
+.toggle_button {
   /* arrangement */
   position: relative;
   display: inline-block;
@@ -168,7 +168,7 @@
   transition: background-color 0.4s;
 }
 
-.toggle-button > .icons-wrapper {
+.toggle_button > .icons_wrapper {
   /* arrangement */
   position: relative;
   display: none;
@@ -187,17 +187,17 @@
   transition: transform 0.25s !important;
 }
 
-.toggle-button > .icons-wrapper.active {
+.toggle_button > .icons_wrapper.active {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.toggle-button > .icons-wrapper.active.dark-mode {
+.toggle_button > .icons_wrapper.active.dark_mode {
   transform: translateX(100%);
 }
 
-.toggle-button > .icons-wrapper > .icons {
+.toggle_button > .icons_wrapper > .icons {
   /* size and alignment */
   width: 12px;
   height: 12px;
@@ -207,8 +207,4 @@
 
   /* font */
   font-size: 12px;
-}
-
-.childrenUl {
-  width: 100%;
 }
