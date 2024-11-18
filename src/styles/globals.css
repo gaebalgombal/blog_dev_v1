@@ -25,7 +25,7 @@
 
   --navbar-height: 50px;
   --navbar-padding: 10px;
-  --sidebar-width: 600px;
+  --sidebar-width: 500px;
 
   /* font */
   font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
@@ -104,10 +104,14 @@ p,
 div,
 h1,
 h2,
-h3 {
+h3,
+button {
   text-decoration: none; /* Removes the underline */
   color: var(--text-color);
   line-height: 1;
+  background-color: transparent;
+  border: transparent;
+  font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
 }
 
 li,

@@ -31,8 +31,9 @@
 }
 
 .h1 {
-  /* arrangemeng */
+  /* arrangement */
   position: relative;
+  height: 2.5rem;
 
   /* size and alignment */
   margin: 10px 0px 70px 10px;

@@ -60,9 +60,21 @@ const MenuLink = ({ params: { key, value } } : Params) => {
 
 
 const AnchorLink = (link: Link) => {
-  return (
+  const pathname = usePathname().split('/') || [];
+  const curLang = pathname[1] || '';
+
+  const activeOrHover = classNames({
+    [typoStyles["signature_color"]]: true,
+    [typoStyles["signature_en"]]: true,
+    [typoStyles["signature_en"]]: curLang === 'en' ? true : false,
+    [typoStyles["signature_kr"]]: curLang === 'kr' ? true : false,
+  });
+
+  return(
     <Link href={`#${link.href.pathname.replaceAll(" ", "-").toLowerCase()}`}>
-      {link.href.pathname}
+      <span className={activeOrHover}>
+        {link.href.pathname}
+      </span>
     </Link>
   );
 };

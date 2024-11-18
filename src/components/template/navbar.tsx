@@ -92,7 +92,7 @@ export const Navbar = ({ params: { lang } } : Props) => {
         <h1 className={h1Class}>
             <a href={`/${lang}/home`}>DEVLOG</a>
         </h1>
-        <ul className={navbarStyles.list}>
+        <ul>
           <li>
             <MenuLink params={{ 
               key: `home`,
@@ -118,27 +118,22 @@ export const Navbar = ({ params: { lang } } : Props) => {
             }}/>
           </li>
           <li>
-            <a href="" onClick={toggleDropdown}>
+            <button className={navbarStyles.dropdown_button} onClick={toggleDropdown}>
               <div>
                 <span className={navbarStyles.hidden}>
                   {NAVBAR_LIST.language?.[lang as keyof Word]}
-                  {/* &nbsp; */}
                   <span className={iconClass}>keyboard_arrow_down</span>
                 </span>
                 <p className={liClass}>
                   {NAVBAR_LIST.language?.[lang as keyof Word]}
-                  {/* &nbsp; */}
                   <span className={iconClass}>keyboard_arrow_down</span>
                 </p>
-                {/* <p className={iconClass}> keyboard_arrow_down </p> */}
+                <div className={isToggleActive ? dropDownActive : dropDownDefault}>
+                  <LangLink params={{ key: `kr`, value: '한국어' }}></LangLink>
+                  <LangLink params={{ key: `en`, value: 'English' }}></LangLink>
+                </div>
               </div>
-            </a>
-          </li>
-          <li>
-            <div className={isToggleActive ? dropDownActive : dropDownDefault}>
-              <LangLink params={{ key: `kr`, value: '한국어' }}></LangLink>
-              <LangLink params={{ key: `en`, value: 'English' }}></LangLink>
-            </div>
+            </button>
           </li>
           <li>
             <button
