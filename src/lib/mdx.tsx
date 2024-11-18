@@ -19,6 +19,9 @@ const tableComponents = {
     </li>
   ),
   p: (props: any) => <p hidden></p>,
+  span: (props: any) => <span hidden></span>,
+  div: (props: any) => <div hidden></div>,
+  pre: (props: any) => <pre hidden></pre>,
 };
 
 const TableMDX = (props: any) => {
