@@ -15,25 +15,8 @@
 @font-face {
   font-family: "YoonChildfundkoreaManSeh";
   src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Chosunilbo_myungjo";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/Chosunilbo_myungjo.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Giants-Inline";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-1@1.1/Giants-Inline.woff2")
-    format("woff2");
-  font-weight: normal;
-  font-style: normal;
+    format("woff2");  
+  
 }
 
 :root {
@@ -45,7 +28,7 @@
   --sidebar-width: 450px;
 
   /* font */
-  font-family: "Noto Sans Mono", "sans-serif";
+  font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
 
   /* styling */
   --background-color: #ffffff;
@@ -137,4 +120,7 @@ table {
   box-sizing: border-box;
   margin: 0; /* Removes default margin */
   padding: 0; /* Removes default padding */
+  text-decoration: none; /* Removes the underline */
+  font: var(--text-color);
+  line-height: 1;
 }

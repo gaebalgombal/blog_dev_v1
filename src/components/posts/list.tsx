@@ -1,8 +1,10 @@
 import Link from "next/link";
+import classNames from "classnames";
 
 import layoutStyles from "@/styles/layout.module.css";
 import contentStyles from "@/styles/content.module.css";
 import sidebarStyles from "@/styles/sidebar.module.css";
+import typoStyles from "@/styles/typography.module.css";
 
 import { getPostList } from "@/lib/posts";
 import { PostProps, PostPackage } from "@/config/types";
@@ -11,6 +13,29 @@ export const PostList = async ({
   params: { lang, category, slug },
 }: PostProps) => {
   const { postList, postPackageList } = await getPostList(lang, category);
+
+  const hover = {
+    [typoStyles["signature_en"]]: lang === 'en' ? true : false,
+    [typoStyles["signature_kr"]]: lang === 'kr' ? true : false,
+  }
+
+  const summary = classNames({
+    [contentStyles["summary"]]: true,
+    ...hover,
+  });
+
+  const h1_category = classNames({
+    [sidebarStyles["h1_category"]]: true,
+    [typoStyles["signature_color"]]: true,
+    ...hover,
+  });
+
+  const h2_title = classNames({
+    [sidebarStyles["h2_title"]]: true,
+    [typoStyles["signature_color"]]: true,
+    ...hover,
+  });
+
 
   return (
     <div className={layoutStyles.ly_main}>
@@ -21,7 +46,7 @@ export const PostList = async ({
             <ul>
               {postPackageList.map((postPackage: PostPackage, i) => (
                 <li key={`${postPackage.category}_${i}`}>
-                  <div className={sidebarStyles.h1_category}>
+                  <div className={h1_category}>
                     <Link
                       href={{
                         pathname: `/${lang}/posts/${postPackage.category}`,
@@ -33,7 +58,7 @@ export const PostList = async ({
                   <ul>
                     {postPackage.postList.map((post, j) => (
                       <li
-                        className={sidebarStyles.h2_title}
+                        className={h2_title}
                         key={`${postPackage.category}_${i}_${post.title}_${j}`}
                       >
                         <Link
@@ -45,7 +70,7 @@ export const PostList = async ({
                         </Link>
                       </li>
                     ))}
-                    <li className={sidebarStyles.h2_title} key={`more_posts`}>
+                    <li className={h2_title} key={`more_posts`}>
                       <Link
                         href={{
                           pathname: `/${lang}/posts/${postPackage.category}`,
@@ -61,7 +86,7 @@ export const PostList = async ({
           </div>
         </div>
       </div>
-      <div className={layoutStyles.ly_content}>
+      <div className={layoutStyles.ly_content} >
         <ul className={contentStyles.bl_content}>
           {postList.map((post, i) => (
             <Link
@@ -69,7 +94,7 @@ export const PostList = async ({
                 pathname: `/${post.url}`,
               }}
             >
-              <li className={contentStyles.summary} key={`${post.url}_${i}`}>
+              <li className={summary} key={`${post.url}_${i}`}>
                 <h1>{post.title}</h1>
                 <p>
                   <span className={contentStyles.date}>{post.dateString}</span>
@@ -77,9 +102,7 @@ export const PostList = async ({
                     {post.category}
                   </span>
                 </p>
-                <div className={contentStyles.description}>
-                  {post.content} ···
-                </div>
+                <div className={contentStyles.description}>{post.content}</div>
                 <br />
               </li>
             </Link>

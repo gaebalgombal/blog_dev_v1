@@ -2,10 +2,10 @@ import layoutStyles from "@/styles/layout.module.css";
 import typoStyles from "@/styles/typography.module.css";
 import classNames from "classnames";
 
-const HomeEN = ({ params: {} }) => {
+const HomeEN = ({ params: { } }) => {
   const sloganOblique = classNames({
-    [typoStyles["en_slogan_oblique"]]: true,
     [typoStyles["en_slogan_default"]]: true,
+    [typoStyles["en_slogan_oblique"]]: true,
   });
 
   return (
@@ -22,7 +22,7 @@ const HomeEN = ({ params: {} }) => {
             <span className={typoStyles.en_slogan_default}>
               YOUR FUTURE BEST COWORKER
             </span>
-            <span className={typoStyles.en_slogan_signature}>.</span>
+            <span className={typoStyles.en_slogan_emphasis_giant}>.</span>
           </div>
         </div>
       </div>
@@ -31,11 +31,6 @@ const HomeEN = ({ params: {} }) => {
 };
 
 const HomeKR = ({ params: {} }) => {
-  const sloganOblique = classNames({
-    [typoStyles["slogan_oblique"]]: true,
-    [typoStyles["slogan_default"]]: true,
-  });
-
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_full_content}>

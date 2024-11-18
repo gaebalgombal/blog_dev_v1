@@ -28,7 +28,7 @@ const CommingSoonKR = ({ params: {} }) => {
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_full_content}>
-        <div className={sloganOblique}>커밍쑨 ···</div>
+        <div className={sloganOblique}>공사중!</div>
       </div>
     </div>
   );

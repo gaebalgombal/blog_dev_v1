@@ -1,14 +1,15 @@
 import { PostList } from "@/components/posts/list";
 import { PostProps, PostParams } from "@/config/types";
-import Template from "@/app/template";
+import { Navbar } from "@/components/template/navbar";
 
 const Page = async ({ params: { lang } }: PostProps) => {
   const params = { lang, category: "**", slug: "**" } as PostParams;
 
   return (
-    <Template params={params}>
+    <div>
+      <Navbar params={{ lang }} />
       <PostList params={params} />;
-    </Template>
+    </div>
   );
 };
 

@@ -1,5 +1,5 @@
-import Template from "@/app/template";
 import { HomeEN, HomeKR } from "@/components/template/home";
+import { Navbar } from "@/components/template/navbar";
 
 type Props = {
   params: {
@@ -11,9 +11,10 @@ const Home = async ({ params: { lang } }: Props) => {
   const params = { lang };
 
   return (
-    <Template params={params}>
+    <div>
+      <Navbar params={{ lang }} />
       {lang === "en" ? <HomeEN params={params} /> : <HomeKR params={params} />}
-    </Template>
+    </div>
   );
 };
 

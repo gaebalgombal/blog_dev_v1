@@ -1,6 +1,13 @@
+/* English Typography */
 .en_slogan_default {
   font-family: "Teko";
   font-size: 5vw;
+  font-weight: 900;
+}
+
+.en_slogan_giant {
+  font-family: "Teko";
+  font-size: 6vw;
   font-weight: 900;
 }
 
@@ -18,6 +25,13 @@
   color: var(--signature-color);
 }
 
+.en_slogan_emphasis_giant {
+  font-family: "Love Ya Like A Sister";
+  font-size: 12vw;
+  font-weight: 900;
+  color: var(--signature-color);
+}
+
 .en_slogan_oblique {
   /* oblique */
   transform: skew(-10deg);
@@ -31,17 +45,13 @@
   margin: 5rem 0 5rem 0;
 }
 
-.en_slogan_signature {
-  font-family: "Love Ya Like A Sister";
-  font-size: 12vw;
-  font-weight: 900;
-  color: var(--signature-color);
-}
-
-.en_slogan_giant {
-  font-family: "Teko";
-  font-size: 6vw;
-  font-weight: 900;
+/* Korean Typography */
+.kr_slogan_default {
+  font-family: "Pretendard variable";
+  font-size: 2vw;
+  font-weight: 600;
+  text-align: left;
+  color: var(--text-color2);
 }
 
 .kr_slogan_giant {
@@ -53,14 +63,6 @@
 .kr_slogan_oblique {
   /* oblique */
   transform: skew(-10deg);
-}
-
-.kr_slogan_default {
-  font-family: "Pretendard variable";
-  font-size: 2vw;
-  font-weight: 600;
-  text-align: left;
-  color: var(--text-color2);
 }
 
 .kr_slogan_emphasis {
@@ -77,4 +79,18 @@
 
 .kr_description_container {
   margin-bottom: 1vw;
+}
+
+/* Signature */
+.signature_color:hover {
+    font-weight: 900;
+    color: var(--signature-color);
+}
+
+.signature_en:hover {
+  font-family: "Love Ya Like A Sister";
+}
+
+.signature_kr:hover {
+  font-family: "YoonChildfundkoreaManSeh";
 }

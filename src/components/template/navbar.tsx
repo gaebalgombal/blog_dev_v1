@@ -6,29 +6,34 @@ import classNames from "classnames";
 
 import layoutStyles from "@/styles/layout.module.css";
 import navbarStyles from "@/styles/navbar.module.css";
+import typoStyles from "@/styles/typography.module.css";
 
-import { NavLink } from "@/lib/link";
+import { LangLink, MenuLink } from "@/lib/link";
 import { NAVBAR_LIST } from "@/config/const";
 import { Word } from "@/config/types";
 
-export const Navbar = ({ params: { lang } }) => {
+type Props = {
+  params : {lang: string}
+}
+
+export const Navbar = ({ params: { lang } } : Props) => {
   const [isToggleActive, setToggleActive] = useState(false);
 
   const toggleDropdown = (event: any) => {
-    setToggleActive((prev) => !prev);
+    setToggleActive((prev) => !prev);    
     event.preventDefault();
 
     return isToggleActive;
   };
 
-  const dropDownActive = classNames({
-    [navbarStyles["dropdown"]]: true,
-    [navbarStyles["active"]]: true,
-  });
-
   const dropDownDefault = classNames({
     [navbarStyles["dropdown"]]: true,
     [navbarStyles["default"]]: true,
+  });
+
+  const dropDownActive = classNames({
+    [navbarStyles.dropdown]: true,
+    [navbarStyles.active]: true,
   });
 
   const iconClass = classNames({
@@ -36,42 +41,74 @@ export const Navbar = ({ params: { lang } }) => {
     [navbarStyles.icons]: true,
   });
 
+  const signature = {
+    [typoStyles["signature_color"]]: true,
+    [typoStyles["signature_en"]]: true,
+    [typoStyles["signature_en"]]: lang === 'en' ? true : false,
+    [typoStyles["signature_kr"]]: lang === 'kr' ? true : false,
+  };
+
+  const h1Class = classNames({
+    ...signature,
+  });
+
+  const liClass = classNames({
+    ...signature,
+    [navbarStyles["visible"]]: true
+  });
+
   return (
     <nav className={layoutStyles.ly_navbar}>
       <div className={navbarStyles.bl_navbar}>
-        <h1>DEVLOG</h1>
-        <ul>
+        <h1 className={h1Class}>
+            <a href={`/${lang}/home`}>DEVLOG</a>
+        </h1>
+        <ul className={navbarStyles.list}>
           <li>
-            <NavLink href={{ pathname: `/${lang}/home` }}>
-              {NAVBAR_LIST.home?.[lang as keyof Word]}
-            </NavLink>
+            <MenuLink params={{ 
+              key: `home`,
+              value: NAVBAR_LIST.home?.[lang as keyof Word]
+            }}/>
           </li>
           <li>
-            <NavLink href={{ pathname: `/${lang}/resume` }}>
-              {NAVBAR_LIST.resume?.[lang as keyof Word]}
-            </NavLink>
+            <MenuLink params={{ 
+              key: `resume`,
+              value: NAVBAR_LIST.resume?.[lang as keyof Word]
+            }}/>
           </li>
           <li>
-            <NavLink href={{ pathname: `/${lang}/portfolio` }}>
-              {NAVBAR_LIST.portfolio?.[lang as keyof Word]}
-            </NavLink>
+            <MenuLink params={{ 
+              key: `portfolio`,
+              value: NAVBAR_LIST.portfolio?.[lang as keyof Word]
+            }}/>
           </li>
           <li>
-            <NavLink href={{ pathname: `/${lang}/posts` }}>
-              {NAVBAR_LIST.posts?.[lang as keyof Word]}
-            </NavLink>
+            <MenuLink params={{ 
+              key: `posts`,
+              value: NAVBAR_LIST.posts?.[lang as keyof Word]
+            }}/>
           </li>
           <li>
             <a href="" onClick={toggleDropdown}>
-              <p>
-                {NAVBAR_LIST.language?.[lang as keyof Word]}{" "}
-                <span className={iconClass}> keyboard_arrow_down </span>
-              </p>
+              <div>
+                <span className={navbarStyles.hidden}>
+                  {NAVBAR_LIST.language?.[lang as keyof Word]}
+                  &nbsp;
+                  <span className={iconClass}>keyboard_arrow_down</span>
+                </span>
+                <p className={liClass}>
+                  {NAVBAR_LIST.language?.[lang as keyof Word]}
+                  &nbsp;
+                  <span className={iconClass}>keyboard_arrow_down</span>
+                </p>
+                {/* <p className={iconClass}> keyboard_arrow_down </p> */}
+              </div>
             </a>
+          </li>
+          <li>
             <div className={isToggleActive ? dropDownActive : dropDownDefault}>
-              {/* TODO: 현재 url의 영어/한국어로 가기 */}
-              <NavLink href={{ pathname: `/kr/home` }}>한국어</NavLink>
-              <NavLink href={{ pathname: `/en/home` }}>English</NavLink>
+              <LangLink params={{ key: `kr`, value: '한국어' }}></LangLink>
+              <LangLink params={{ key: `en`, value: 'English' }}></LangLink>
             </div>
           </li>
           {/* TODO: 다크모드 구현 */}

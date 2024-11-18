@@ -13,8 +13,8 @@
 
   /* styling */
   color: var(--text-color);
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.5rem;
+  font-weight: 900;
 }
 
 .summary p {
@@ -33,12 +33,19 @@
 .summary > .description {
   /* arrangement */
   position: relative;
+  max-height: 5.5rem;
 
   /* styling */
   font-size: 1rem;
+  line-height: 1.1rem;
   overflow: hidden;
   color: var(--text-color2);
   letter-spacing: 0.5;
+}
+
+.summary > .description::after {
+  content: "···";
+  /* TODO: overflow:hidden 요소일 때도 말줄임표 나타나게 구현 */
 }
 
 .full {
@@ -52,7 +59,7 @@
 
   /* styling */
   color: var(--text-color);
-  font-size: 2.5em;
+  font-size: 2rem;
   font-weight: 900;
 }
 
@@ -86,3 +93,4 @@
 .full > *:last-child {
   padding-bottom: 60px;
 }
+
