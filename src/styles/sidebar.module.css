@@ -12,7 +12,24 @@
 
   /* size and alignment */
   margin: 0px 10px;
+
+  /* styling */
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bl_sidebar p.p_top {
   padding: 0px 0px 5px 10px;
+}
+
+.bl_sidebar p.p_bottom {
+  /* arrangement */
+  position: relative;
+
+  /* size and alignment */
+  margin: 0px 10px;
+  padding: 10px 0px 0px 10px;
 
   /* styling */
   color: inherit;

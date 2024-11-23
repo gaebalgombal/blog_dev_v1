@@ -70,16 +70,17 @@ const sortByDate = (postList: Post[]) => {
 const arrangeByCategory = (postList: Post[], lang: string) => {
   const reduced = postList.reduce<PostPackage[]>(
     (acc: PostPackage[], cur: Post) => {
-      const category =
+      const categoryString =
         CATEGORY_LIST?.[cur.category as keyof CatergoryList]?.[
           lang as keyof Word
         ];
 
-      const curIndex = acc.findIndex((v) => v.category === category);
+      const curIndex = acc.findIndex((v) => v.category === cur.category);
 
       if (curIndex < 0) {
         acc.push({
-          category: category,
+          category: cur.category,
+          categoryString: categoryString,
           postList: [cur],
         });
       } else {

@@ -89,8 +89,8 @@ export const Navbar = ({ params: { lang } } : Props) => {
   return (
     <nav className={layoutStyles.ly_navbar}>
       <div className={navbarStyles.bl_navbar}>
-        <h1 className={h1Class}>
-            <a href={`/${lang}/home`}>DEVLOG</a>
+        <h1 >
+            <a href={`/${lang}/home`} className={h1Class}>DEVLOG</a>
         </h1>
         <ul>
           <li>

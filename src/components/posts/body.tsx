@@ -22,8 +22,15 @@ export const PostBody = async ({
   }
 
   const whatIsThisPage = (lang: string) => {
-    if (lang === "en") return "On this page ···";
+    if (lang === "en") return "ON THIS PAGE ···";
     if (lang === "kr") return "··· 목차 ···";
+
+    return "On this page ···";
+  };
+
+  const backToList = (lang: string) => {
+    if (lang === "en") return " BACK TO LIST  ＞＞＞";
+    if (lang === "kr") return "··· 목록으로 ＞＞＞";
 
     return "On this page ···";
   };
@@ -32,10 +39,15 @@ export const PostBody = async ({
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_sidebar}>
         <div className={sidebarStyles.bl_sidebar}>
-          <p>{whatIsThisPage(lang)}</p>
+          <p className={sidebarStyles.p_top}>{whatIsThisPage(lang)}</p>
           <ul className={sidebarStyles.ly_table}>
             <TableMDX source={post.content} />
           </ul>
+          <p className={sidebarStyles.p_bottom}>
+            <a href={`/${lang}/posts/${post.category}`}>
+              {backToList(lang)}
+            </a>
+          </p>
         </div>
       </div>
       <div className={layoutStyles.ly_content}>

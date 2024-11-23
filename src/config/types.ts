@@ -24,6 +24,7 @@ interface Post extends PostParams {
 
 interface PostPackage {
   category: string;
+  categoryString: string;
   postList: Post[];
 }
 

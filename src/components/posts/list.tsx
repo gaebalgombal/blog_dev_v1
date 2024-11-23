@@ -36,53 +36,81 @@ export const PostList = async ({
     ...hover,
   });
 
+  const pBottom = classNames({
+    [typoStyles["signature_color"]]: true,
+    ...hover,
+  })
+
+  const whatIsOnThisBlog = (lang: string) => {
+    if (lang === "en") return "On THIS BLOG ···";
+    if (lang === "kr") return "··· 글 목록 ···";
+
+    return "On this page ···";
+  };
+
+  const backToFull = (lang: string) => {
+    if (lang === "en") return "BACK TO FULL LIST ＞＞＞";
+    if (lang === "kr") return "전체 목록 보기 ＞＞＞";
+
+    return "On this page ···";
+  };
+
   return (
     <div className={layoutStyles.ly_main}>
       <div className={layoutStyles.ly_sidebar}>
         <div className={sidebarStyles.bl_sidebar}>
-          <p>{lang === "en" ? "On this site ···" : "··· 글 목록 ···"}</p>
-          <div className={sidebarStyles.ly_table} key={`cateogory_and_titles`}>
-            <ul>
-              {postPackageList.map((postPackage: PostPackage, i) => (
-                <li key={`${postPackage.category}_${i}`}>
-                  <div className={h1Category}>
-                    <Link
-                      href={{
-                        pathname: `/${lang}/posts/${postPackage.category}`,
-                      }}
+        <p className={sidebarStyles.p_top}>{whatIsOnThisBlog(lang)}</p>
+        <div className={sidebarStyles.ly_table} key={`cateogory_and_titles`}>
+          <ul>
+            {postPackageList.map((postPackage: PostPackage, i) => (
+              <li key={`${postPackage.categoryString}_${i}`}>
+                <div className={h1Category}>
+                  <Link
+                    href={{
+                      pathname: `/${lang}/posts/${postPackage.category}`,
+                    }}
+                  >
+                    {postPackage.categoryString}
+                  </Link>
+                </div>
+                <ul>
+                  {postPackage.postList.map((post, j) => (
+                    <li
+                      className={h2Title}
+                      key={`${postPackage.category}_${i}_${post.title}_${j}`}
                     >
-                      {postPackage.category}
-                    </Link>
-                  </div>
-                  <ul>
-                    {postPackage.postList.map((post, j) => (
-                      <li
-                        className={h2Title}
-                        key={`${postPackage.category}_${i}_${post.title}_${j}`}
-                      >
-                        <Link
-                          href={{
-                            pathname: `/${post.url}`,
-                          }}
-                        >
-                          {`${post.title} > `}
-                        </Link>
-                      </li>
-                    ))}
-                    <li className={h2Title} key={`more_posts`}>
                       <Link
                         href={{
-                          pathname: `/${lang}/posts/${postPackage.category}`,
+                          pathname: `/${post.url}`,
                         }}
                       >
-                        {lang === "en" ? `MORE ··· >` : `더보기 ··· >`}
+                        {`${post.title} > `}
                       </Link>
                     </li>
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </div>
+                  ))}
+                  {
+                    postPackageList.length > 1 ? 
+                    <li className={h2Title} key={`more_posts`}>
+                        <Link
+                          href={{
+                            pathname: `/${lang}/posts/${postPackage.category}`,
+                          }}
+                        >
+                          {lang === "en" ? `MORE ··· >` : `더보기 ··· >`}
+                        </Link>
+                    </li>
+                    : ""
+                  }
+                </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <p className={sidebarStyles.p_bottom}>
+          <a href={`/${lang}/posts`} className={pBottom} >
+            {backToFull(lang)}
+          </a>
+        </p>
         </div>
       </div>
       <div className={layoutStyles.ly_content}>
