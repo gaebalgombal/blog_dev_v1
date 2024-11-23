@@ -179,13 +179,13 @@
   transition: transform 0.25s !important;
 }
 
-.toggle_button > .icons_wrapper.active {
+.toggle_button > .active {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.toggle_button > .icons_wrapper.active.dark_mode {
+.toggle_button > .dark_mode {
   transform: translateX(100%);
 }
 
