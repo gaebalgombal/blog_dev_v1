@@ -2,6 +2,12 @@
   "name": "blog_dev_v1",
   "version": "0.1.0",
   "private": true,
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -16,6 +22,7 @@
     "js-cookie": "^3.0.5",
     "next": "14.2.5",
     "next-mdx-remote": "^5.0.0",
+    "prettier": "^3.3.3",
     "react": "^18",
     "react-dom": "^18",
     "rehype-pretty-code": "^0.13.2",
