@@ -133,28 +133,3 @@ table {
     color: var(--text-color);
     line-height: 1;
 }
-
-main {
-    position: relative;
-    height: 100%;
-    margin-bottom: 50px;
-}
-
-footer {
-    /* arrangement */
-    position: absolute;
-    left: 5%;
-    bottom: -50px;
-
-    /* size and alignment */
-    height: 50px;
-    width: 95%;
-
-    /* styling */
-    text-align: center;
-
-    /* test */
-    border: 1px solid red;
-    /* background-color: yellow; */
-    /* opacity: 50%; */
-}

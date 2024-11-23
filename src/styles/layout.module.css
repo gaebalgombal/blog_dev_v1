@@ -37,7 +37,7 @@
     /* size and alignment */
     box-sizing: border-box;
     width: calc(var(--sidebar-width) + 5%);
-    height: calc(100% - 50px);
+    height: 100vh;
     padding-top: 50px;
 
     /* styling */

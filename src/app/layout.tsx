@@ -20,10 +20,7 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body>
-                <main>{children}</main>
-                <footer>This is FOOTER.</footer>
-            </body>
+            <body>{children}</body>
         </html>
     );
 }
