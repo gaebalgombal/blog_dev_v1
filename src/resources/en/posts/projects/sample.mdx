@@ -1,11 +1,12 @@
 ---
-title: THIS IS PROJECT ONE.
+title: THIS IS SAMPLE ONE.
 date: 2024.07.25
 ---
 
-# THIS IS PROJECT ONE
+# THIS IS SAMPLE ONE
 
 ## TITLE ONE
+
 ### description one
 
 Configuring CSS-in-JS in app
@@ -24,11 +25,11 @@ app/registry.tsx
 
 ```TypeScript
 'use client'
- 
+
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
- 
+
 export default function StyledJsxRegistry({
   children,
 }: {
@@ -37,18 +38,19 @@ export default function StyledJsxRegistry({
   // Only create stylesheet once with lazy initial state
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [jsxStyleRegistry] = useState(() => createStyleRegistry())
- 
+
   useServerInsertedHTML(() => {
     const styles = jsxStyleRegistry.styles()
     jsxStyleRegistry.flush()
     return <>{styles}</>
   })
- 
+
   return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
 }
 ```
 
 ## TITLE TWO
+
 ### description two
 
 Configuring CSS-in-JS in app
@@ -62,15 +64,16 @@ styled-jsx
 Using styled-jsx in Client Components requires using v5.1.0. First, create a new registry:
 
 ### code two
+
 app/registry.tsx
 
 ```TypeScript
 'use client'
- 
+
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
- 
+
 export default function StyledJsxRegistry({
   children,
 }: {
@@ -79,18 +82,19 @@ export default function StyledJsxRegistry({
   // Only create stylesheet once with lazy initial state
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [jsxStyleRegistry] = useState(() => createStyleRegistry())
- 
+
   useServerInsertedHTML(() => {
     const styles = jsxStyleRegistry.styles()
     jsxStyleRegistry.flush()
     return <>{styles}</>
   })
- 
+
   return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
 }
 ```
 
 ## TITLE THREE
+
 ### description three
 
 Configuring CSS-in-JS in app
@@ -104,15 +108,16 @@ styled-jsx
 Using styled-jsx in Client Components requires using v5.1.0. First, create a new registry:
 
 ### code three
+
 app/registry.tsx
 
 ```TypeScript
 'use client'
- 
+
 import React, { useState } from 'react'
 import { useServerInsertedHTML } from 'next/navigation'
 import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
- 
+
 export default function StyledJsxRegistry({
   children,
 }: {
@@ -121,13 +126,13 @@ export default function StyledJsxRegistry({
   // Only create stylesheet once with lazy initial state
   // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
   const [jsxStyleRegistry] = useState(() => createStyleRegistry())
- 
+
   useServerInsertedHTML(() => {
     const styles = jsxStyleRegistry.styles()
     jsxStyleRegistry.flush()
     return <>{styles}</>
   })
- 
+
   return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
 }
 ```
