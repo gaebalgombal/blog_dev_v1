@@ -14,7 +14,7 @@ export const getPostParams = async ({}: PostProps) => {
             params.push({
                 lang: "en",
                 category: enPackage.category,
-                slug: post.title,
+                slug: post.slug,
             });
         }
     }
@@ -24,7 +24,7 @@ export const getPostParams = async ({}: PostProps) => {
             params.push({
                 lang: "kr",
                 category: krPackage.category,
-                slug: post.title,
+                slug: post.slug,
             });
         }
     }

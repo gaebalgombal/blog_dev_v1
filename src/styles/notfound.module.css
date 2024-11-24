@@ -1,0 +1,45 @@
+.bl_404 {
+    /* arrangement */
+    display: grid;
+    grid-template-areas:
+        "h1 h1"
+        "previous home";
+    grid-auto-columns: 2fr 1fr;
+
+    /* size and alignment */
+    justify-self: center;
+    width: fit-content;
+}
+
+.bl_404 h1 {
+    /* arrangement */
+    grid-area: h1;
+    justify-items: center;
+    align-items: center;
+
+    /* size and alignment */
+    line-height: 6vw;
+    text-align: center;
+    margin-bottom: 1vw;
+}
+
+.bl_404 a {
+    /* size and alignment */
+    padding-top: 10px;
+    padding-bottom: 5px;
+    line-height: 2vw;
+
+    /* styling */
+    border: 2px solid var(--text-color);
+}
+
+.previous {
+    /* arrangement */
+    grid-area: previous;
+    margin-right: 10px;
+}
+
+.home {
+    /* arrangement */
+    grid-area: home;
+}

@@ -12,6 +12,7 @@ import { getPostDetail } from "@/lib/posts";
 import { PostProps } from "@/config/types";
 import { TableMDX, ContentMDX } from "@/lib/mdx";
 import { Alert } from "@/components/template/alert";
+import { notFound } from "next/navigation";
 
 export const PostBody = async ({
     params: { lang, category, slug },
@@ -19,14 +20,15 @@ export const PostBody = async ({
     const post = await getPostDetail({ lang, category, slug });
 
     if (!post) {
-        return (
-            <Alert
-                params={{
-                    message: "존재하지 않는 글입니다.",
-                    link: `/${lang}/posts`,
-                }}
-            />
-        );
+        notFound();
+        // return (
+        //     <Alert
+        //         params={{
+        //             message: "존재하지 않는 글입니다.",
+        //             link: `/${lang}/posts`,
+        //         }}
+        //     />
+        // );
     }
 
     const whatIsThisPage = (lang: string) => {
