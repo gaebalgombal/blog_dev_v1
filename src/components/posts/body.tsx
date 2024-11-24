@@ -44,42 +44,37 @@ export const PostBody = async ({
     };
 
     return (
-        <div id="wrapper">
-            <div className={layoutStyles.ly_main}>
-                <div className={layoutStyles.ly_sidebar}>
-                    <div className={sidebarStyles.bl_sidebar}>
-                        <p className={sidebarStyles.p_top}>
-                            {whatIsThisPage(lang)}
-                        </p>
-                        <ul className={sidebarStyles.ly_table}>
-                            <TableMDX source={post.content} />
-                        </ul>
-                        <p className={sidebarStyles.p_bottom}>
-                            <a href={`/${lang}/posts/${post.category}`}>
-                                {backToList(lang)}
-                            </a>
-                        </p>
-                    </div>
+        <div className={layoutStyles.ly_main}>
+            <div className={layoutStyles.ly_sidebar}>
+                <div className={sidebarStyles.bl_sidebar}>
+                    <p className={sidebarStyles.p_top}>
+                        {whatIsThisPage(lang)}
+                    </p>
+                    <ul className={sidebarStyles.ly_table}>
+                        <TableMDX source={post.content} />
+                    </ul>
+                    <p className={sidebarStyles.p_bottom}>
+                        <a href={`/${lang}/posts/${post.category}`}>
+                            {backToList(lang)}
+                        </a>
+                    </p>
                 </div>
-                <div className={layoutStyles.ly_content}>
-                    <div className={contentStyles.bl_content}>
-                        <div className={contentStyles.full}>
-                            <ContentMDX
-                                source={post.content}
-                                options={{
-                                    mdxOptions: {
-                                        remarkPlugins: [
-                                            remarkGfm,
-                                            remarkBreaks,
-                                        ],
-                                        rehypePlugins: [
-                                            [rehypeHighlight],
-                                            rehypeSlug,
-                                        ],
-                                    },
-                                }}
-                            />
-                        </div>
+            </div>
+            <div className={layoutStyles.ly_content}>
+                <div className={contentStyles.bl_content}>
+                    <div className={contentStyles.full}>
+                        <ContentMDX
+                            source={post.content}
+                            options={{
+                                mdxOptions: {
+                                    remarkPlugins: [remarkGfm, remarkBreaks],
+                                    rehypePlugins: [
+                                        [rehypeHighlight],
+                                        rehypeSlug,
+                                    ],
+                                },
+                            }}
+                        />
                     </div>
                 </div>
             </div>
