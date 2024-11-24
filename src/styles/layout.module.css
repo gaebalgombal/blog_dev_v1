@@ -1,0 +1,93 @@
+.ly_navbar {
+    /* arrangement */
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: 100%;
+    height: var(--navbar-height);
+    padding: 10px 0px;
+
+    /* styling */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    box-shadow: var(--shadow-color) 0px 10px 15px 0px;
+    border-bottom: var(--border-color) 3px solid;
+}
+
+.ly_main {
+    /* arrangement */
+    position: relative;
+    top: 0;
+    left: 0;
+
+    /* size and alignment */
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+}
+
+.ly_sidebar {
+    /* arrangement */
+    position: fixed;
+    top: var(--navbar-height);
+    right: 0;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: calc(var(--sidebar-width) + 5%);
+    min-height: 100vh;
+    height: auto;
+    padding-top: 50px;
+
+    /* styling */
+    border-left: 3px solid var(--text-color);
+}
+
+.ly_content {
+    /* arrangement */
+    position: relative;
+    top: var(--navbar-height);
+    left: 5%;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: calc(90% - var(--sidebar-width) - 10px);
+    min-height: 100vh;
+    height: auto;
+    padding: 50px 100px 50px 10px;
+}
+
+.ly_full_content {
+    /* arrangement */
+    position: relative;
+    top: var(--navbar-height);
+    left: 5%;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: 90%;
+    height: auto;
+    padding: 50px 100px 50px 10px;
+}
+
+.ly_footer {
+    /* arrangement */
+    position: relative;
+    top: 0;
+    left: 0;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: calc(95% - var(--sidebar-width) - 13px);
+    height: 50px;
+    line-height: 30px;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /* styling */
+    font: 10px;
+}

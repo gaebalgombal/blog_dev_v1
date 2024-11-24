@@ -1,0 +1,154 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Just+Me+Again+Down+Here&family=Love+Ya+Like+A+Sister&family=Mountains+of+Christmas:wght@400;700&family=Noto+Sans+Mono:wght@100..900&family=Teko:wght@300..700&display=swap");
+
+@font-face {
+    font-family: "Material Icons";
+    font-style: normal;
+    font-weight: 400;
+    src: url(https://example.com/MaterialIcons-Regular.eot); /* For IE6-8 */
+    src:
+        local("Material Icons"),
+        local("MaterialIcons-Regular"),
+        url(https://example.com/MaterialIcons-Regular.woff2) format("woff2"),
+        url(https://example.com/MaterialIcons-Regular.woff) format("woff"),
+        url(https://example.com/MaterialIcons-Regular.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: "YoonChildfundkoreaManSeh";
+    src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/2408@1.0/YoonChildfundkoreaManSeh.woff2")
+        format("woff2");
+}
+
+:root {
+    /* size */
+    margin: 0;
+
+    --navbar-height: 50px;
+    --navbar-padding: 10px;
+    --sidebar-width: 500px;
+
+    /* font */
+    font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
+
+    /* styling */
+    --text-color: #000000;
+    --text-color2: #353535;
+    --background-color: #ffffff;
+    --background-color2: #eaeaea;
+    --background-color3: #bdbdbd;
+    --shadow-color: rgba(0, 0, 0, 0.04);
+    --border-color: #000000;
+    --signature-color: #348017;
+}
+
+.darkmode {
+    --text-color: #ffffff;
+    --text-color2: #eaeaea;
+    --background-color: #000000;
+    --background-color2: #353535;
+    --background-color3: #a3a3a3;
+    --signature-color: #75fb4c;
+    --border-color: #75fb4c;
+    --shadow-color: transparent;
+}
+
+.material-icons {
+    font-family: "Material Icons";
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px; /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+
+    /* Support for IE. */
+    font-feature-settings: "liga";
+}
+
+/* default settings */
+
+html,
+body {
+    height: auto;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+
+    scroll-padding-top: 50px;
+    scroll-behavior: smooth;
+    background-color: var(--background-color);
+}
+
+li,
+ul,
+ol {
+    list-style: none; /* Removes default bullets and numbers */
+}
+
+a,
+p,
+div,
+h1,
+h2,
+h3,
+button {
+    text-decoration: none; /* Removes the underline */
+    color: var(--text-color);
+    line-height: 1;
+    background-color: transparent;
+    border: transparent;
+    font-family: "Pretendard variable", "Noto Sans Mono", "sans-serif";
+}
+
+li,
+ul,
+ol,
+a,
+p,
+div,
+h1,
+h2,
+h3,
+table {
+    border: 0;
+    box-sizing: border-box;
+    margin: 0; /* Removes default margin */
+    padding: 0; /* Removes default padding */
+    text-decoration: none; /* Removes the underline */
+    color: var(--text-color);
+    line-height: 1;
+}
+
+main {
+    position: relative;
+
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+footer {
+    /* arrangement */
+    /* position: absolute;
+    transform: translateY(100%);
+    bottom: 0; */
+
+    /* size and arrangement */
+    height: 50px;
+    width: 100%;
+}

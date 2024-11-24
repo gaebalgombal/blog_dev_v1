@@ -1,0 +1,114 @@
+.bl_content {
+    position: relative;
+    height: 100%;
+}
+
+.summary {
+    margin-bottom: 30px;
+    min-height: 5.5rem;
+
+    font-family: inherit;
+
+    /* event */
+    pointer-events: none;
+    cursor: none;
+}
+
+.summary h1 {
+    /* size and alignment */
+    padding-bottom: 10px;
+    height: 3rem;
+
+    /* styling */
+    font-family: inherit;
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.summary p {
+    /* size and alignment */
+    padding-bottom: 30px;
+    height: 1rem;
+
+    /* styling */
+    font-family: inherit;
+    color: var(--text-color2);
+    font-size: 1rem;
+}
+
+.summary span {
+    padding-right: 10px;
+    font-family: inherit;
+}
+
+.summary > .description {
+    /* arrangement */
+    position: relative;
+    min-height: 2.5rem;
+    max-height: 5.5rem;
+
+    /* styling */
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.1rem;
+    overflow: hidden;
+    color: var(--text-color2);
+    letter-spacing: 0.5;
+}
+
+.summary > .description::after {
+    content: "[···]";
+}
+
+.full {
+    height: 100%;
+    width: 100%;
+}
+
+.full h1 {
+    /* size and alignment */
+    padding-bottom: 30px;
+
+    /* styling */
+    color: var(--text-color);
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+.full h2 {
+    /* size and alignment */
+    padding-top: 30px;
+
+    /* styling */
+    color: var(--text-color);
+    font-size: 1.5rem;
+}
+
+.full h3 {
+    /* size and alignment */
+    padding-top: 30px;
+
+    /* styling */
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.full p {
+    /* size and alignment */
+    padding-top: 30px;
+
+    /* styling */
+    color: var(--text-color2);
+    line-height: 1.2;
+}
+
+.clickable {
+    /* event */
+    pointer-events: auto;
+    cursor: pointer;
+}
+
+.dark_code_box {
+    border: solid 2px var(--text-color);
+}

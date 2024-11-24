@@ -1,0 +1,136 @@
+.bl_sidebar {
+  /* size and alignment */
+  position: relative;
+
+  /* styling */
+  color: var(--text-color);
+}
+
+.bl_sidebar p {
+  /* arrangement */
+  position: relative;
+
+  /* size and alignment */
+  margin: 0px 10px;
+
+  /* styling */
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.bl_sidebar p.p_top {
+  padding: 0px 0px 5px 10px;
+}
+
+.bl_sidebar p.p_bottom {
+  /* arrangement */
+  position: relative;
+
+  /* size and alignment */
+  margin: 0px 10px;
+  padding: 10px 0px 0px 10px;
+
+  /* styling */
+  color: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.ly_table {
+  /* size and alignment */
+  margin: 0px 10px;
+  padding: 10px 0px 20px 0;
+
+  /* styling */
+  border-top: 7px solid var(--text-color);
+  border-bottom: 7px solid var(--text-color);
+}
+
+.h1 {
+  /* arrangement */
+  position: relative;
+  height: 2.5rem;
+
+  /* size and alignment */
+  margin: 10px 0px 70px 10px;
+
+  /* styling */
+  color: var(--text-color1);
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.h2 {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0px 0px 10px;
+  height: 20px;
+
+  /* styling */
+  color: var(--text-color2);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.h3 {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0px 0px 10px;
+  height: 20px;
+
+  /* styling */
+  color: var(--text-color2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.h1_category {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0px 30px 10px;
+
+  /* styling */
+  color: var(--text-color1);
+  font-size: 2.5rem;
+  font-weight: 900;
+}
+
+.h2_title {
+  /* arrangemeng */
+  position: relative;
+
+  /* size and alignment */
+  margin: 10px 0 0 10px;
+  height: 20px;
+
+  /* styling */
+  color: var(--text-color2);
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+ul > .h2_title:last-child {
+  margin-bottom: 30px;
+}
+
+.ly_table a {
+  /* styling */
+  color: currentColor;
+  font: inherit;
+}
+
+.line {
+  /* arrangement */
+  position: absolute;
+  left: -20px;
+
+  /* size and aligment */
+  width: calc(var(--sidebar-width) - 30px + 100vw / 20);
+}

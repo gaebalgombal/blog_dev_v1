@@ -1,0 +1,138 @@
+---
+title: THIS IS SAMPLE ONE.
+date: 2024.07.25
+---
+
+# THIS IS SAMPLE ONE
+
+## TITLE ONE
+
+### description one
+
+Configuring CSS-in-JS in app
+Configuring CSS-in-JS is a three-step opt-in process that involves:
+
+A style registry to collect all CSS rules in a render.
+The new useServerInsertedHTML hook to inject rules before any content that might use them.
+A Client Component that wraps your app with the style registry during initial server-side rendering.
+
+styled-jsx
+Using styled-jsx in Client Components requires using v5.1.0. First, create a new registry:
+
+### code one
+
+app/registry.tsx
+
+```TypeScript
+'use client'
+
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
+
+export default function StyledJsxRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [jsxStyleRegistry] = useState(() => createStyleRegistry())
+
+  useServerInsertedHTML(() => {
+    const styles = jsxStyleRegistry.styles()
+    jsxStyleRegistry.flush()
+    return <>{styles}</>
+  })
+
+  return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
+}
+```
+
+## TITLE TWO
+
+### description two
+
+Configuring CSS-in-JS in app
+Configuring CSS-in-JS is a three-step opt-in process that involves:
+
+A style registry to collect all CSS rules in a render.
+The new useServerInsertedHTML hook to inject rules before any content that might use them.
+A Client Component that wraps your app with the style registry during initial server-side rendering.
+
+styled-jsx
+Using styled-jsx in Client Components requires using v5.1.0. First, create a new registry:
+
+### code two
+
+app/registry.tsx
+
+```TypeScript
+'use client'
+
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
+
+export default function StyledJsxRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [jsxStyleRegistry] = useState(() => createStyleRegistry())
+
+  useServerInsertedHTML(() => {
+    const styles = jsxStyleRegistry.styles()
+    jsxStyleRegistry.flush()
+    return <>{styles}</>
+  })
+
+  return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
+}
+```
+
+## TITLE THREE
+
+### description three
+
+Configuring CSS-in-JS in app
+Configuring CSS-in-JS is a three-step opt-in process that involves:
+
+A style registry to collect all CSS rules in a render.
+The new useServerInsertedHTML hook to inject rules before any content that might use them.
+A Client Component that wraps your app with the style registry during initial server-side rendering.
+
+styled-jsx
+Using styled-jsx in Client Components requires using v5.1.0. First, create a new registry:
+
+### code three
+
+app/registry.tsx
+
+```TypeScript
+'use client'
+
+import React, { useState } from 'react'
+import { useServerInsertedHTML } from 'next/navigation'
+import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
+
+export default function StyledJsxRegistry({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  // Only create stylesheet once with lazy initial state
+  // x-ref: https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  const [jsxStyleRegistry] = useState(() => createStyleRegistry())
+
+  useServerInsertedHTML(() => {
+    const styles = jsxStyleRegistry.styles()
+    jsxStyleRegistry.flush()
+    return <>{styles}</>
+  })
+
+  return <StyleRegistry registry={jsxStyleRegistry}>{children}</StyleRegistry>
+}
+```

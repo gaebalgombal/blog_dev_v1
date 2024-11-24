@@ -1,0 +1,202 @@
+.bl_navbar {
+  /* arranagement */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 90%;
+  height: 100%;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.bl_navbar h1 a {
+  /* size and alignment */
+  box-sizing: border-box;
+  padding: 5px 10px;
+
+  /* styling */
+  color: var(--text-color);
+
+  /* font */
+  font-size: 1.5rem;
+  font-style: monospace;
+  font-weight: 800;
+}
+
+.bl_navbar ul {
+  /* arrangement */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: var(--sidebar-width);
+
+  /* styling */
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.bl_navbar li {
+  /* arrangement */
+  position: relative;
+
+  /* size */
+  box-sizing: border-box;
+}
+
+.bl_navbar li div {
+  /* arrangement */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+
+  /* styling */
+  text-align: center;
+  text-decoration: none;
+  color: var(--text-color);
+
+  /* font */
+  font-size: 1.1rem;
+  font-style: monospace;
+  font-weight: 500;
+}
+
+.hidden {
+  color: transparent;
+}
+
+.visible {
+  position: absolute;
+  color: var(--text-color);
+}
+
+.bl_navbar li p.visible:hover {
+  /* styling */
+  color: var(--signature-color);
+  font-weight: 900;
+}
+
+.bl_navbar li p.active {
+  /* styling */
+  color: var(--signature-color);
+  font-weight: 900;
+}
+
+.bl_navbar li p > .icons {
+  /* font */
+  font-size: 1rem;
+}
+
+.bl_navbar li .dropdown {
+  /* arrangement */
+  position: absolute;
+  top: calc(var(--navbar-height) * 0.9);
+  right: 10px;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  padding: 10px 10px 0 10px;
+  width: calc(var(--sidebar-width) / 4);
+
+  /* styling */
+  border: 1px solid var(--text-color);
+  background-color: var(--background-color);
+}
+
+.bl_navbar li .dropdown:hover {
+  display: block;
+  color: var(--signature-color);
+}
+
+.bl_navbar li .dropdown.active {
+  display: block;
+  color: var(--signature-color);
+}
+
+.bl_navbar li .dropdown.default {
+  display: none;
+}
+
+.bl_navbar li .dropdown > a > p {
+  box-sizing: border-box;
+  padding-bottom: 13.5px;
+  color: var(--text-color);
+}
+
+.bl_navbar li .dropdown > a > p:hover {
+  color: var(--signature-color);
+}
+
+.dropdown_button {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.toggle_button {
+  /* arrangement */
+  position: relative;
+  display: inline-block;
+
+  /* size and alignment */
+  box-sizing: border-box;
+  width: 40px;
+  height: 22px;
+  padding: 0px;
+
+  /* styling */
+  background-color: var(--background-color2);
+  border: 1px solid var(--background-color3);
+  border-radius: 11px;
+
+  /* action */
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.4s;
+}
+
+.toggle_button > .icons_wrapper {
+  /* arrangement */
+  position: relative;
+  display: none;
+
+  /* size and aligment */
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* styling */
+  background-color: var(--background-color);
+  box-shadow: var(--shadow-color);
+
+  /* action */
+  transition: transform 0.25s !important;
+}
+
+.toggle_button > .active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle_button > .dark_mode {
+  transform: translateX(100%);
+}
+
+.toggle_button > .icons_wrapper > .icons {
+  /* size and alignment */
+  width: 12px;
+  height: 12px;
+
+  /* styling */
+  color: var(--text-color2);
+
+  /* font */
+  font-size: 12px;
+}
