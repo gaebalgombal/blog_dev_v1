@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import layoutStyles from "@/styles/layout.module.css";
 
 import "../styles/globals.css";
 
@@ -20,7 +21,14 @@ export default function RootLayout({
                     rel="stylesheet"
                 />
             </head>
-            <body>{children}</body>
+            <body>
+                <main>{children}</main>
+                <footer>
+                    <div className={layoutStyles.ly_footer}>
+                        ⓒ DEVLOG, KIM JEONG YEON
+                    </div>
+                </footer>
+            </body>
         </html>
     );
 }

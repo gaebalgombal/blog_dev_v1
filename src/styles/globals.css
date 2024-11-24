@@ -82,7 +82,7 @@
 
 html,
 body {
-    height: 100vh;
+    height: auto;
     width: 100vw;
     margin: 0;
     padding: 0;
@@ -132,4 +132,23 @@ table {
     text-decoration: none; /* Removes the underline */
     color: var(--text-color);
     line-height: 1;
+}
+
+main {
+    position: relative;
+
+    height: auto;
+    min-height: 100%;
+    padding-bottom: 50px;
+}
+
+footer {
+    /* arrangement */
+    /* position: absolute;
+    transform: translateY(100%);
+    bottom: 0; */
+
+    /* size and arrangement */
+    height: 50px;
+    width: 100%;
 }

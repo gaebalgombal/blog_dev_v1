@@ -103,10 +103,6 @@
     line-height: 1.2;
 }
 
-.full > *:last-child {
-    margin-bottom: 60px;
-}
-
 .clickable {
     /* event */
     pointer-events: auto;

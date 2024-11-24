@@ -25,7 +25,8 @@
 
     /* size and alignment */
     width: 100%;
-    height: 100vh;
+    height: auto;
+    min-height: 100vh;
 }
 
 .ly_sidebar {
@@ -37,7 +38,8 @@
     /* size and alignment */
     box-sizing: border-box;
     width: calc(var(--sidebar-width) + 5%);
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
     padding-top: 50px;
 
     /* styling */
@@ -46,26 +48,47 @@
 
 .ly_content {
     /* arrangement */
-    position: absolute;
+    position: relative;
     top: var(--navbar-height);
     left: 5%;
 
     /* size and alignment */
     box-sizing: border-box;
-    width: calc(90% - var(--sidebar-width));
-    height: 100%;
+    width: calc(90% - var(--sidebar-width) - 10px);
+    min-height: 100vh;
+    height: auto;
     padding: 50px 100px 50px 10px;
 }
 
 .ly_full_content {
     /* arrangement */
-    position: absolute;
+    position: relative;
     top: var(--navbar-height);
     left: 5%;
 
     /* size and alignment */
     box-sizing: border-box;
     width: 90%;
-    height: 100%;
+    height: auto;
     padding: 50px 100px 50px 10px;
+}
+
+.ly_footer {
+    /* arrangement */
+    position: relative;
+    top: 0;
+    left: 0;
+
+    /* size and alignment */
+    box-sizing: border-box;
+    width: calc(95% - var(--sidebar-width) - 13px);
+    height: 50px;
+    line-height: 30px;
+    padding-left: 5%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    /* styling */
+    border-top: 3px solid var(--border-color);
+    font: 10px;
 }
